@@ -1,1377 +1,1374 @@
 .tableList {
-    margin-top: 10px;
-    width: 1018px;
+  margin: 10px 0 0 3px;
 }
 
 #menuIcon {
-    margin: 7px 0 0 5px;
+  margin: 7px 0 0 5px;
 }
 
 .stopwatch {
-    position: relative;
-    z-index: 10;
+  position: relative;
+  z-index: 10;
 }
 
 .selectBtn {
-    position: absolute;
-    left: 960px;
-    top: 12px;
-    z-index: 10;
-    background-color: #FFF;
-    padding: 5px 12px 5px 5px;
+  position: absolute;
+  left: 710px;
+  top: 10px;
+  z-index: 10;
+  background-color: #FFF;
+  padding: 5px 12px 5px 5px;
 }
 
 .title {
-    position: absolute;
-    left: 30px;
-    top: 18px;
-    z-index: 10;
-    font-size: 26px;
-    color: #FFF;
+  position: absolute;
+  left: 30px;
+  top: 18px;
+  z-index: 10;
+  font-size: 26px;
+  color: #FFF;
 }
 
 #confirm {
-    position: absolute;
-    left: 940px;
-    top: 600px;
+  position: absolute;
+  left: 940px;
+  top: 600px;
 }
 
 .square_btn {
-    display: inline-block;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    background: rgb(63,81,181);
-    color: #FFF;
-    border-bottom: solid 4px #627295;
-    border-radius: 3px;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: rgb(63, 81, 181);
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
 }
 
-
-
 #No1 {
-    position: absolute;
-    left: 688px;
-    top: 116px;
-    width: 95px;
-    height: 11px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 530px;
+  top: 176px;
+  width: 54px;
+  height: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 6px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No2 {
-    position: absolute;
-    left: 587px;
-    top: 116px;
-    width: 95px;
-    height: 11px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 469px;
+  top: 176px;
+  width: 54px;
+  height: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 6px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No3 {
-    position: absolute;
-    left: 486px;
-    top: 116px;
-    width: 95px;
-    height: 11px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 364px;
+  top: 176px;
+  width: 54px;
+  height: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 6px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No4 {
-    position: absolute;
-    left: 384px;
-    top: 116px;
-    width: 95px;
-    height: 11px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 302px;
+  top: 176px;
+  width: 54px;
+  height: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 6px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No5 {
-    position: absolute;
-    left: 275px;
-    top: 149px;
-    width: 81px;
-    height: 16px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 189px;
+  top: 340px;
+  width: 55px;
+  height: 9px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No6 {
-    position: absolute;
-    left: 187px;
-    top: 149px;
-    width: 81px;
-    height: 16px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 128px;
+  top: 340px;
+  width: 55px;
+  height: 9px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No7 {
-    position: absolute;
-    left: 99px;
-    top: 149px;
-    width: 81px;
-    height: 16px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 65px;
+  top: 340px;
+  width: 55px;
+  height: 9px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No8 {
-    position: absolute;
-    left: 12px;
-    top: 149px;
-    width: 81px;
-    height: 16px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 3px;
+  top: 340px;
+  width: 55px;
+  height: 9px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No10 {
-    position: absolute;
-    left: 679px;
-    top: 200px;
-    width: 86px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 502px;
+  top: 250px;
+  width: 45px;
+  height: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 7px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No11 {
-    position: absolute;
-    left: 587px;
-    top: 200px;
-    width: 86px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 448px;
+  top: 250px;
+  width: 45px;
+  height: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 7px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No12 {
-    position: absolute;
-    left: 495px;
-    top: 200px;
-    width: 86px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 388px;
+  top: 250px;
+  width: 45px;
+  height: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 7px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No13 {
-    position: absolute;
-    left: 404px;
-    top: 200px;
-    width: 86px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 333px;
+  top: 250px;
+  width: 45px;
+  height: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 7px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No14 {
-    position: absolute;
-    left: 715px;
-    top: 275px;
-    width: 67px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 518px;
+  top: 314px;
+  width: 46px;
+  height: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No15 {
-    position: absolute;
-    left: 641px;
-    top: 275px;
-    width: 67px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 470px;
+  top: 314px;
+  width: 45px;
+  height: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No16 {
-    position: absolute;
-    left: 567px;
-    top: 275px;
-    width: 67px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 423px;
+  top: 314px;
+  width: 44px;
+  height: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No17 {
-    position: absolute;
-    left: 493px;
-    top: 275px;
-    width: 67px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 375px;
+  top: 314px;
+  width: 45px;
+  height: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No18 {
-    position: absolute;
-    left: 419px;
-    top: 275px;
-    width: 67px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 327px;
+  top: 314px;
+  width: 45px;
+  height: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No19 {
-    position: absolute;
-    left: 346px;
-    top: 275px;
-    width: 67px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 280px;
+  top: 314px;
+  width: 44px;
+  height: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No20 {
-    position: absolute;
-    left: 715px;
-    top: 319px;
-    width: 67px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 518px;
+  top: 366px;
+  width: 46px;
+  height: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No21 {
-    position: absolute;
-    left: 641px;
-    top: 319px;
-    width: 67px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 470px;
+  top: 366px;
+  width: 45px;
+  height: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No22 {
-    position: absolute;
-    left: 567px;
-    top: 319px;
-    width: 67px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 423px;
+  top: 366px;
+  width: 44px;
+  height: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No23 {
-    position: absolute;
-    left: 493px;
-    top: 319px;
-    width: 67px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 375px;
+  top: 366px;
+  width: 45px;
+  height: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No24 {
-    position: absolute;
-    left: 419px;
-    top: 319px;
-    width: 67px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 327px;
+  top: 366px;
+  width: 45px;
+  height: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No25 {
-    position: absolute;
-    left: 346px;
-    top: 319px;
-    width: 67px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 280px;
+  top: 366px;
+  width: 44px;
+  height: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No26 {
-    position: absolute;
-    left: 701px;
-    top: 411px;
-    width: 84px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 497px;
+  top: 461px;
+  width: 34px;
+  height: 11px;
+  font-size: 19px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No27 {
-    position: absolute;
-    left: 612px;
-    top: 411px;
-    width: 84px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 462px;
+  top: 461px;
+  width: 32px;
+  height: 11px;
+  font-size: 19px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No28 {
-    position: absolute;
-    left: 523px;
-    top: 411px;
-    width: 84px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 427px;
+  top: 461px;
+  width: 32px;
+  height: 11px;
+  font-size: 19px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No29 {
-    position: absolute;
-    left: 433px;
-    top: 411px;
-    width: 84px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 391px;
+  top: 461px;
+  width: 33px;
+  height: 11px;
+  font-size: 19px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No30 {
-    position: absolute;
-    left: 344px;
-    top: 411px;
-    width: 84px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 322px;
+  top: 461px;
+  width: 32px;
+  height: 11px;
+  font-size: 19px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No31 {
-    position: absolute;
-    left: 726px;
-    top: 455px;
-    width: 59px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 527px;
+  top: 514px;
+  width: 33px;
+  height: 9px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No32 {
-    position: absolute;
-    left: 663px;
-    top: 455px;
-    width: 59px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 492px;
+  top: 514px;
+  width: 32px;
+  height: 9px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No33 {
-    position: absolute;
-    left: 600px;
-    top: 455px;
-    width: 59px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 457px;
+  top: 514px;
+  width: 32px;
+  height: 9px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No34 {
-    position: absolute;
-    left: 535px;
-    top: 455px;
-    width: 59px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 422px;
+  top: 514px;
+  width: 32px;
+  height: 9px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No35 {
-    position: absolute;
-    left: 471px;
-    top: 455px;
-    width: 59px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 387px;
+  top: 514px;
+  width: 32px;
+  height: 9px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No36 {
-    position: absolute;
-    left: 408px;
-    top: 455px;
-    width: 59px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 352px;
+  top: 514px;
+  width: 32px;
+  height: 9px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No37 {
-    position: absolute;
-    left: 343px;
-    top: 455px;
-    width: 59px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 317px;
+  top: 514px;
+  width: 32px;
+  height: 9px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No38 {
-    position: absolute;
-    left: 687px;
-    top: 520px;
-    width: 95px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 485px;
+  top: 598px;
+  width: 55px;
+  height: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No39 {
-    position: absolute;
-    left: 586px;
-    top: 520px;
-    width: 95px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 423px;
+  top: 598px;
+  width: 55px;
+  height: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No40 {
-    position: absolute;
-    left: 484px;
-    top: 520px;
-    width: 95px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 330px;
+  top: 598px;
+  width: 55px;
+  height: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No41 {
-    position: absolute;
-    left: 383px;
-    top: 520px;
-    width: 95px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 268px;
+  top: 598px;
+  width: 55px;
+  height: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No42 {
-    position: absolute;
-    left: 271px;
-    top: 360px;
-    width: 55px;
-    height: 11px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 257px;
+  top: 420px;
+  width: 43px;
+  height: 11px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 9px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No43 {
-    position: absolute;
-    left: 211px;
-    top: 360px;
-    width: 55px;
-    height: 11px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 213px;
+  top: 420px;
+  width: 41px;
+  height: 11px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 9px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No44 {
-    position: absolute;
-    left: 271px;
-    top: 404px;
-    width: 55px;
-    height: 11px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 257px;
+  top: 476px;
+  width: 43px;
+  height: 11px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 9px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No45 {
-    position: absolute;
-    left: 211px;
-    top: 404px;
-    width: 55px;
-    height: 11px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 213px;
+  top: 476px;
+  width: 41px;
+  height: 11px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 9px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No46 {
-    position: absolute;
-    left: 271px;
-    top: 448px;
-    width: 55px;
-    height: 11px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 257px;
+  top: 533px;
+  width: 43px;
+  height: 11px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 9px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No47 {
-    position: absolute;
-    left: 211px;
-    top: 448px;
-    width: 55px;
-    height: 11px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 213px;
+  top: 533px;
+  width: 41px;
+  height: 11px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 9px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No48 {
-    position: absolute;
-    left: 140px;
-    top: 389px;
-    width: 53px;
-    height: 11px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 155px;
+  top: 513px;
+  width: 33px;
+  height: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 18px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No49 {
-    position: absolute;
-    left: 140px;
-    top: 433px;
-    width: 53px;
-    height: 11px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 155px;
+  top: 559px;
+  width: 33px;
+  height: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 18px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No50 {
-    position: absolute;
-    left: 82px;
-    top: 389px;
-    width: 53px;
-    height: 11px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 94px;
+  top: 513px;
+  width: 33px;
+  height: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 18px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No51 {
-    position: absolute;
-    left: 82px;
-    top: 433px;
-    width: 53px;
-    height: 11px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 94px;
+  top: 559px;
+  width: 33px;
+  height: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 18px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No52 {
-    position: absolute;
-    left: 259px;
-    top: 231px;
-    width: 55px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 156px;
+  top: 400px;
+  width: 36px;
+  height: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No53 {
-    position: absolute;
-    left: 198px;
-    top: 231px;
-    width: 55px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 118px;
+  top: 400px;
+  width: 35px;
+  height: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No54 {
-    position: absolute;
-    left: 136px;
-    top: 231px;
-    width: 55px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 81px;
+  top: 400px;
+  width: 34px;
+  height: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No55 {
-    position: absolute;
-    left: 75px;
-    top: 231px;
-    width: 55px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 43px;
+  top: 400px;
+  width: 35px;
+  height: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No56 {
-    position: absolute;
-    left: 14px;
-    top: 231px;
-    width: 55px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 7px;
+  top: 400px;
+  width: 33px;
+  height: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No57 {
-    position: absolute;
-    left: 259px;
-    top: 274px;
-    width: 55px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 156px;
+  top: 440px;
+  width: 36px;
+  height: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No58 {
-    position: absolute;
-    left: 198px;
-    top: 274px;
-    width: 55px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 118px;
+  top: 440px;
+  width: 35px;
+  height: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No59 {
-    position: absolute;
-    left: 136px;
-    top: 274px;
-    width: 55px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 81px;
+  top: 440px;
+  width: 34px;
+  height: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No60 {
-    position: absolute;
-    left: 75px;
-    top: 274px;
-    width: 55px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 43px;
+  top: 440px;
+  width: 35px;
+  height: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 8px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No61 {
-    position: absolute;
-    left: 11px;
-    top: 323px;
-    width: 55px;
-    height: 12px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 21px;
+  top: 489px;
+  width: 29px;
+  height: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 14px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No62 {
-    position: absolute;
-    left: 11px;
-    top: 367px;
-    width: 55px;
-    height: 12px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 21px;
+  top: 526px;
+  width: 29px;
+  height: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 14px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No63 {
-    position: absolute;
-    left: 11px;
-    top: 413px;
-    width: 55px;
-    height: 12px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 21px;
+  top: 563px;
+  width: 29px;
+  height: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 14px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No64 {
-    position: absolute;
-    left: 11px;
-    top: 459px;
-    width: 55px;
-    height: 12px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 21px;
+  top: 600px;
+  width: 29px;
+  height: 7px;
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 14px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No65 {
-    position: absolute;
-    left: 11px;
-    top: 504px;
-    width: 55px;
-    height: 12px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 21px;
+  top: 634px;
+  width: 29px;
+  height: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 14px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No66 {
-    position: absolute;
-    left: 719px;
-    top: 17px;
-    width: 108px;
-    height: 13px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 545px;
+  top: 51px;
+  width: 35px;
+  height: 21px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 18px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No67 {
-    position: absolute;
-    left: 719px;
-    top: 62px;
-    width: 108px;
-    height: 9px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 545px;
+  top: 103px;
+  width: 35px;
+  height: 21px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 18px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No68 {
-    position: absolute;
-    left: 606px;
-    top: 17px;
-    width: 108px;
-    height: 13px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 475px;
+  top: 51px;
+  width: 35px;
+  height: 21px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 18px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No69 {
-    position: absolute;
-    left: 606px;
-    top: 62px;
-    width: 108px;
-    height: 9px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 475px;
+  top: 103px;
+  width: 35px;
+  height: 21px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 18px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No70 {
-    position: absolute;
-    left: 311px;
-    top: 17px;
-    width: 108px;
-    height: 13px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 380px;
+  top: 51px;
+  width: 35px;
+  height: 21px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 18px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No71 {
-    position: absolute;
-    left: 311px;
-    top: 62px;
-    width: 108px;
-    height: 9px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 380px;
+  top: 103px;
+  width: 35px;
+  height: 21px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 18px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No72 {
-    position: absolute;
-    left: 199px;
-    top: 17px;
-    width: 106px;
-    height: 12px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 309px;
+  top: 51px;
+  width: 36px;
+  height: 21px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 18px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No73 {
-    position: absolute;
-    left: 199px;
-    top: 62px;
-    width: 106px;
-    height: 9px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 309px;
+  top: 103px;
+  width: 36px;
+  height: 21px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 18px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No76 {
-    position: absolute;
-    left: 945px;
-    top: 237px;
-    width: 58px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 691px;
+  top: 448px;
+  width: 44px;
+  height: 26px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 38px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No77 {
-    position: absolute;
-    left: 945px;
-    top: 280px;
-    width: 58px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 691px;
+  top: 535px;
+  width: 44px;
+  height: 26px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 38px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No78 {
-    position: absolute;
-    left: 880px;
-    top: 237px;
-    width: 59px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 606px;
+  top: 448px;
+  width: 44px;
+  height: 26px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 38px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No79 {
-    position: absolute;
-    left: 880px;
-    top: 280px;
-    width: 59px;
-    height: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 606px;
+  top: 535px;
+  width: 44px;
+  height: 26px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 38px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No80 {
-    position: absolute;
-    left: 945px;
-    top: 398px;
-    width: 54px;
-    height: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 691px;
+  top: 650px;
+  width: 44px;
+  height: 26px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 38px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No81 {
-    position: absolute;
-    left: 945px;
-    top: 505px;
-    width: 54px;
-    height: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 691px;
+  top: 816px;
+  width: 44px;
+  height: 26px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 38px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No82 {
-    position: absolute;
-    left: 886px;
-    top: 398px;
-    width: 54px;
-    height: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 606px;
+  top: 650px;
+  width: 44px;
+  height: 26px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 38px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No83 {
-    position: absolute;
-    left: 886px;
-    top: 505px;
-    width: 54px;
-    height: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 606px;
+  top: 816px;
+  width: 44px;
+  height: 26px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 38px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #No86 {
-    position: absolute;
-    left: 886px;
-    top: 451px;
-    width: 54px;
-    height: 21px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 18px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 606px;
+  top: 733px;
+  width: 44px;
+  height: 26px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 38px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #Nectar {
-    position: absolute;
-    left: 801px;
-    top: 106px;
-    width: 209px;
-    height: 15px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 40px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 665px;
+  top: 245px;
+  width: 44px;
+  height: 37px;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 100px 0 10px;
+  color: #333;
+  border: 1px solid #333;
 }
 
 #Prometheus {
-    position: absolute;
-    left: 800px;
-    top: 339px;
-    width: 69px;
-    height: 69px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 150px 0 10px;
-    color: #333;
-    border: 1px solid #333;
+  position: absolute;
+  left: 347px;
+  top: 727px;
+  width: 61px;
+  height: 13px;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 10px 40px 10px;
+  color: #333;
+  border: 1px solid #333;
 }
