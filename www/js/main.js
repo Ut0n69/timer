@@ -5,9 +5,9 @@ var arrTmp;
 var date = moment().format('YYYYMMDD');
 
 // color
-var select = 'rgba(175, 175, 175, 0.6)';
-var empty = 'rgb(255, 255, 255, 1)';
-var used = 'rgba(255, 0, 0, 0.6)';
+var empty = 'rgba(175, 175, 175, 0.6)';
+var used = 'rgba(255, 255, 255, 0)';
+var over = 'rgba(255, 0, 0, 0.6)';
 var beer = 'rgba(255, 241, 15, 1)';
 var reserved = 'rgba(171, 255, 127, 1)';
 
@@ -53,14 +53,12 @@ var StopWatch = function(_continerId) {
 
         if (chkArr.length == 0) {
           $("#" + _continerId).css({
-            'background-color': select,
-            'opacity': '0.6'
+            'background-color': empty
           });
         } else {
           $.each(arr, function(i, val) {
             $("#" + _continerId).css({
-              'background-color': '',
-              'opacity': ''
+              'background-color': ''
             });
 
             // 重複項目にundefinedを代入
@@ -90,6 +88,7 @@ var StopWatch = function(_continerId) {
         $("#" + _continerId).css({
           'background-color': used
         });
+
         $("#" + _continerId + " .startBtn").hide();
         $("#" + _continerId + " .timerText").show();
         self.stop();
@@ -129,8 +128,7 @@ var StopWatch = function(_continerId) {
         self.reset();
         self.status();
         $("#" + _continerId).css({
-          'background-color': '',
-          'opacity': ''
+          'background-color': ''
         });
         $("#" + _continerId + " .timerText").hide();
         $("#" + _continerId + " .startBtn").show();
@@ -292,7 +290,6 @@ $(function() {
 
 
 
-
   /*------------------
       jQueryEvents
   ------------------*/
@@ -300,7 +297,10 @@ $(function() {
   $(".timerText").hide();
   $("#confirm").hide();
 
-  // スクロールを無効にする
+  // コピー，右クリック無効
+  $('div').css('user-select', 'none').on('copy paste contextmenu', false);
+
+  // スクロール無効
   $(window).on('touchmove.noScroll', function(e) {
     e.preventDefault();
   });
@@ -312,8 +312,7 @@ $(function() {
     } else {
       $.each(arr, function(i, val) {
         $("#" + val).css({
-          'background-color': '',
-          'opacity': ''
+          'background-color': ''
         });
       });
       arr.length = 0;
@@ -326,8 +325,7 @@ $(function() {
 
     $.each(arr, function(i, val) {
       $("#" + val).css({
-        'background-color': '',
-        'opacity': ''
+        'background-color': ''
       });
     });
 
@@ -343,7 +341,5 @@ $(function() {
 
     return false;
   });
-
-
 
 });
