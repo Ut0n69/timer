@@ -79,7 +79,6 @@ var StopWatch = function(_continerId) {
 
       console.log(arr);
 
-
       // 単体選択
     } else {
 
