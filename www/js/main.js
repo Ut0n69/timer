@@ -82,6 +82,7 @@ var StopWatch = function(_continerId) {
       // 単体選択
     } else {
 
+      // 座席使用開始
       if (self.checkStatus == true) {
 
         $("#" + _continerId).css({
@@ -118,6 +119,7 @@ var StopWatch = function(_continerId) {
         //     }
         // );
 
+        // 座席使用終了
       } else {
 
         var getTime = $("#" + _continerId + " .timerText").text();
