@@ -307,18 +307,20 @@ $(function() {
   });
 
   // 座席複数指定の選択検知
-  $("#switch-2").change(function() {
+  $("#switch-2").on('tap', function() {
     if ($(this).is(":checked")) {
-      $("#confirm").show();
+      // $("#confirm").show();
     } else {
       $.each(arr, function(i, val) {
-        $("#" + val).css({
-          'background-color': ''
-        });
+        // $("#" + val).css({
+        //   'background-color': ''
+        // });
       });
       arr.length = 0;
       $("#confirm").hide();
     }
+
+    return false;e
   });
 
   // 座席複数指定の確定
