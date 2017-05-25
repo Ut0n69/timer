@@ -99,7 +99,7 @@ var StopWatch = function(_continerId) {
           heading: tmpText,
           showHideTransition: 'fade',
           allowToastClose: true,
-          hideAfter: 150000,
+          hideAfter: 1500,
           stack: 5,
           position: 'top-left',
 
