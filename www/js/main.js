@@ -1,7 +1,6 @@
 var arr = [];
 var chkArr = [];
 var arrTmp;
-
 var date = moment().format('YYYYMMDD');
 
 // color
@@ -85,6 +84,34 @@ var StopWatch = function(_continerId) {
       // 座席使用開始
       if (self.checkStatus == true) {
 
+        var tmpText;
+        if (this.id == "Prometheus") {
+          tmpText = "プロメテウス"
+        } else if (this.id == "Nectar") {
+          tmpText = "ネクタル"
+        } else {
+          var text = this.id;
+          var tmpText = text.substr(2);
+        }
+
+        $.toast({
+          text: "開始しました",
+          heading: tmpText,
+          showHideTransition: 'fade',
+          allowToastClose: true,
+          hideAfter: 150000,
+          stack: 5,
+          position: 'top-left',
+
+          bgColor: '#444444',
+          textColor: '#eeeeee',
+          textAlign: 'left',
+          beforeShow: function() {},
+          afterShown: function() {},
+          beforeHide: function() {},
+          afterHidden: function() {}
+        });
+
         $("#" + _continerId).css({
           'background-color': used
         });
@@ -121,6 +148,36 @@ var StopWatch = function(_continerId) {
 
         // 座席使用終了
       } else {
+
+        var tmpText;
+        if (this.id == "Prometheus") {
+          tmpText = "プロメテウス"
+        } else if (this.id == "Nectar") {
+          tmpText = "ネクタル"
+        } else {
+          var text = this.id;
+          var tmpText = text.substr(2);
+        }
+
+        $.toast({
+          text: "終了しました",
+          heading: tmpText,
+          showHideTransition: 'fade',
+          allowToastClose: true,
+          hideAfter: 1500,
+          stack: 5,
+          position: 'top-left',
+
+          bgColor: '#444444',
+          textColor: '#eeeeee',
+          textAlign: 'left',
+          beforeShow: function() {},
+          afterShown: function() {},
+          beforeHide: function() {},
+          afterHidden: function() {}
+        });
+
+
 
         var getTime = $("#" + _continerId + " .timerText").text();
         var tmp = ~~getTime;
@@ -320,7 +377,8 @@ $(function() {
       $("#confirm").hide();
     }
 
-    return false;e
+    return false;
+    e
   });
 
   // 座席複数指定の確定
