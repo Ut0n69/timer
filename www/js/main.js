@@ -6,7 +6,7 @@ var getNowTime;
 // color
 var empty = 'rgba(175, 175, 175, 0.6)';
 var used = 'rgba(255, 255, 255, 0)';
-var over = 'rgba(255, 0, 0, 0.6)';
+var over = 'rgba(255, 68, 68, 1)';
 var beer = 'rgba(255, 241, 15, 1)';
 var reserved = 'rgba(158, 249, 111, 1)';
 
@@ -275,10 +275,23 @@ StopWatch.prototype.reset = function() {
 };
 StopWatch.prototype.run = function() {
   var self = this;
+  var timer = this.timerId;
   this.checkStatus = false;
-  this.timerId = setInterval(function() {
+  timer = setInterval(function() {
     var num = $(self.continerSelecter + ">" + self.timerTextSelecter).text();
-    $(self.continerSelecter + ">" + self.timerTextSelecter).text(~~num - 1);
+
+    // 時間切れ
+    if (~~num <= 0) {
+      $(self.continerSelecter).css({
+        'background-color': over,
+        'color': '#000'
+      });
+      $(self.continerSelecter + ">" + self.timerTextSelecter).text(self.continerSelecter.substr(3));
+      clearInterval(timer);
+    } else {
+      $(self.continerSelecter + ">" + self.timerTextSelecter).text(~~num - 1);
+    }
+
   }, this.defaultInterval);
 };
 
@@ -401,7 +414,6 @@ $(function() {
     }
 
     return false;
-    e
   });
 
   // 座席複数指定の確定
