@@ -13,16 +13,3 @@ var server = app.listen(3000, function() {
 
     console.log('It works!');
 });
-
-
-
-/*------------------
-    リダイレクト
-------------------*/
-// app.get('/map', function(req, res) {
-//     res.sendFile(__dirname + '/www/map.html');
-// });
-//
-// app.get('/management', function(req, res) {
-//     res.sendFile(__dirname + '/www/management.html');
-// });
