@@ -1,14 +1,14 @@
 var arr = [];
 var chkArr = [];
 var arrTmp;
-var date = moment().format('YYYYMMDD');
+var getNowTime;
 
 // color
 var empty = 'rgba(175, 175, 175, 0.6)';
 var used = 'rgba(255, 255, 255, 0)';
 var over = 'rgba(255, 0, 0, 0.6)';
 var beer = 'rgba(255, 241, 15, 1)';
-var reserved = 'rgba(171, 255, 127, 1)';
+var reserved = 'rgba(158, 249, 111, 1)';
 
 /*------------------
     class: StopWatch
@@ -20,12 +20,31 @@ var StopWatch = function(_continerId) {
   this.stopBtnSelecter = ".stopBtn";
   this.resetBtnSelecter = ".resetBtn";
   this.timerTextSelecter = ".timerText";
-  this.defaultInterval = 1000;
+  this.defaultInterval = 60000;
   this.timerId = null;
 
   this.checkStatus = true;
 
-  // テーブル選択
+  // シングルタップ 予約の設定
+  $(this.continerSelecter).on("tap", function() {
+
+    if (self.checkStatus == true) {
+      if ($("#switch-2").prop("checked")) {
+        $("#" + _continerId).css({
+          'background-color': reserved
+        });
+      } else {
+        console.log("false");
+      }
+    } else {
+      console.log("test");
+    }
+
+
+    return false;
+  });
+
+  // ロングタップ テーブル選択
   $(this.continerSelecter).on("taphold", function() {
 
     // 複数選択
@@ -94,12 +113,14 @@ var StopWatch = function(_continerId) {
           var tmpText = text.substr(2);
         }
 
+        getNowTime = moment().format('HH:mm');
+
         $.toast({
-          text: "開始しました",
+          text: '開始しました' + '<br />' + getNowTime,
           heading: tmpText,
           showHideTransition: 'fade',
           allowToastClose: true,
-          hideAfter: 1500,
+          hideAfter: 1750,
           stack: 5,
           position: 'top-left',
 
@@ -113,7 +134,8 @@ var StopWatch = function(_continerId) {
         });
 
         $("#" + _continerId).css({
-          'background-color': used
+          'background-color': used,
+          'color': '#000'
         });
 
         $("#" + _continerId + " .startBtn").hide();
@@ -164,7 +186,7 @@ var StopWatch = function(_continerId) {
           heading: tmpText,
           showHideTransition: 'fade',
           allowToastClose: true,
-          hideAfter: 1500,
+          hideAfter: 1750,
           stack: 5,
           position: 'top-left',
 
@@ -186,7 +208,8 @@ var StopWatch = function(_continerId) {
         self.reset();
         self.status();
         $("#" + _continerId).css({
-          'background-color': ''
+          'background-color': '',
+          'color': '#fff'
         });
         $("#" + _continerId + " .timerText").hide();
         $("#" + _continerId + " .startBtn").show();
