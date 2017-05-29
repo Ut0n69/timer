@@ -1,15 +1,14 @@
 var arr = [];
 var chkArr = [];
 var arrTmp;
-
-var date = moment().format('YYYYMMDD');
+var getNowTime;
 
 // color
-var select = 'rgba(175, 175, 175, 0.6)';
-var empty = 'rgb(255, 255, 255, 1)';
-var used = 'rgba(255, 0, 0, 0.6)';
+var empty = 'rgba(175, 175, 175, 0.6)';
+var used = 'rgba(255, 255, 255, 0)';
+var over = 'rgba(255, 0, 0, 0.6)';
 var beer = 'rgba(255, 241, 15, 1)';
-var reserved = 'rgba(171, 255, 127, 1)';
+var reserved = 'rgba(158, 249, 111, 1)';
 
 /*------------------
     class: StopWatch
@@ -21,12 +20,31 @@ var StopWatch = function(_continerId) {
   this.stopBtnSelecter = ".stopBtn";
   this.resetBtnSelecter = ".resetBtn";
   this.timerTextSelecter = ".timerText";
-  this.defaultInterval = 1000;
+  this.defaultInterval = 60000;
   this.timerId = null;
 
   this.checkStatus = true;
 
-  // テーブル選択
+  // シングルタップ 予約の設定
+  $(this.continerSelecter).on("tap", function() {
+
+    if (self.checkStatus == true) {
+      if ($("#switch-2").prop("checked")) {
+        $("#" + _continerId).css({
+          'background-color': reserved
+        });
+      } else {
+        console.log("false");
+      }
+    } else {
+      console.log("test");
+    }
+
+
+    return false;
+  });
+
+  // ロングタップ テーブル選択
   $(this.continerSelecter).on("taphold", function() {
 
     // 複数選択
@@ -53,14 +71,12 @@ var StopWatch = function(_continerId) {
 
         if (chkArr.length == 0) {
           $("#" + _continerId).css({
-            'background-color': select,
-            'opacity': '0.6'
+            'background-color': empty
           });
         } else {
           $.each(arr, function(i, val) {
             $("#" + _continerId).css({
-              'background-color': '',
-              'opacity': ''
+              'background-color': ''
             });
 
             // 重複項目にundefinedを代入
@@ -81,15 +97,47 @@ var StopWatch = function(_continerId) {
 
       console.log(arr);
 
-
       // 単体選択
     } else {
 
+      // 座席使用開始
       if (self.checkStatus == true) {
 
-        $("#" + _continerId).css({
-          'background-color': used
+        var tmpText;
+        if (this.id == "Prometheus") {
+          tmpText = "プロメテウス"
+        } else if (this.id == "Nectar") {
+          tmpText = "ネクタル"
+        } else {
+          var text = this.id;
+          var tmpText = text.substr(2);
+        }
+
+        getNowTime = moment().format('HH:mm');
+
+        $.toast({
+          text: '開始しました' + '<br />' + getNowTime,
+          heading: tmpText,
+          showHideTransition: 'fade',
+          allowToastClose: true,
+          hideAfter: 1750,
+          stack: 5,
+          position: 'top-left',
+
+          bgColor: '#444444',
+          textColor: '#eeeeee',
+          textAlign: 'left',
+          beforeShow: function() {},
+          afterShown: function() {},
+          beforeHide: function() {},
+          afterHidden: function() {}
         });
+
+        $("#" + _continerId).css({
+          'background-color': used,
+          'color': '#000'
+        });
+
         $("#" + _continerId + " .startBtn").hide();
         $("#" + _continerId + " .timerText").show();
         self.stop();
@@ -120,7 +168,38 @@ var StopWatch = function(_continerId) {
         //     }
         // );
 
+        // 座席使用終了
       } else {
+
+        var tmpText;
+        if (this.id == "Prometheus") {
+          tmpText = "プロメテウス"
+        } else if (this.id == "Nectar") {
+          tmpText = "ネクタル"
+        } else {
+          var text = this.id;
+          var tmpText = text.substr(2);
+        }
+
+        $.toast({
+          text: "終了しました",
+          heading: tmpText,
+          showHideTransition: 'fade',
+          allowToastClose: true,
+          hideAfter: 1750,
+          stack: 5,
+          position: 'top-left',
+
+          bgColor: '#444444',
+          textColor: '#eeeeee',
+          textAlign: 'left',
+          beforeShow: function() {},
+          afterShown: function() {},
+          beforeHide: function() {},
+          afterHidden: function() {}
+        });
+
+
 
         var getTime = $("#" + _continerId + " .timerText").text();
         var tmp = ~~getTime;
@@ -130,7 +209,7 @@ var StopWatch = function(_continerId) {
         self.status();
         $("#" + _continerId).css({
           'background-color': '',
-          'opacity': ''
+          'color': '#fff'
         });
         $("#" + _continerId + " .timerText").hide();
         $("#" + _continerId + " .startBtn").show();
@@ -292,7 +371,6 @@ $(function() {
 
 
 
-
   /*------------------
       jQueryEvents
   ------------------*/
@@ -300,25 +378,30 @@ $(function() {
   $(".timerText").hide();
   $("#confirm").hide();
 
-  // スクロールを無効にする
+  // コピー，右クリック無効
+  $('div').css('user-select', 'none').on('copy paste contextmenu', false);
+
+  // スクロール無効
   $(window).on('touchmove.noScroll', function(e) {
     e.preventDefault();
   });
 
   // 座席複数指定の選択検知
-  $("#switch-2").change(function() {
+  $("#switch-2").on('tap', function() {
     if ($(this).is(":checked")) {
-      $("#confirm").show();
+      // $("#confirm").show();
     } else {
       $.each(arr, function(i, val) {
-        $("#" + val).css({
-          'background-color': '',
-          'opacity': ''
-        });
+        // $("#" + val).css({
+        //   'background-color': ''
+        // });
       });
       arr.length = 0;
       $("#confirm").hide();
     }
+
+    return false;
+    e
   });
 
   // 座席複数指定の確定
@@ -326,8 +409,7 @@ $(function() {
 
     $.each(arr, function(i, val) {
       $("#" + val).css({
-        'background-color': '',
-        'opacity': ''
+        'background-color': ''
       });
     });
 
@@ -343,7 +425,5 @@ $(function() {
 
     return false;
   });
-
-
 
 });
