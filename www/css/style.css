@@ -62,7 +62,7 @@
   font-size: 20px;
   padding: 6px 0 10px;
   color: #FFF;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #No2 {
@@ -73,7 +73,7 @@
   font-size: 20px;
   padding: 6px 0 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #No3 {
@@ -84,7 +84,7 @@
   font-size: 20px;
   padding: 6px 0 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #No4 {
@@ -95,7 +95,7 @@
   font-size: 20px;
   padding: 6px 0 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #No5 {
@@ -106,7 +106,7 @@
   font-size: 20px;
   padding: 8px 0 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #No6 {
@@ -117,7 +117,7 @@
   font-size: 20px;
   padding: 8px 0 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #No7 {
@@ -128,7 +128,7 @@
   font-size: 20px;
   padding: 8px 0 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #No8 {
@@ -139,7 +139,7 @@
   font-size: 20px;
   padding: 8px 0 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #No10 {
@@ -458,7 +458,7 @@
   font-size: 20px;
   padding: 8px 0 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #No39 {
@@ -469,7 +469,7 @@
   font-size: 20px;
   padding: 8px 0 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #No40 {
@@ -480,7 +480,7 @@
   font-size: 20px;
   padding: 8px 0 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #No41 {
@@ -491,7 +491,7 @@
   font-size: 20px;
   padding: 8px 0 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #No42 {
@@ -854,7 +854,7 @@
   font-size: 20px;
   padding: 38px 0 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #No77 {
@@ -865,7 +865,7 @@
   font-size: 20px;
   padding: 38px 0 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #No78 {
@@ -876,7 +876,7 @@
   font-size: 20px;
   padding: 38px 0 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #No79 {
@@ -887,7 +887,7 @@
   font-size: 20px;
   padding: 38px 0 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #No80 {
@@ -898,7 +898,7 @@
   font-size: 20px;
   padding: 38px 0 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #No81 {
@@ -909,7 +909,7 @@
   font-size: 20px;
   padding: 38px 0 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #No82 {
@@ -920,7 +920,7 @@
   font-size: 20px;
   padding: 38px 0 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #No83 {
@@ -931,7 +931,7 @@
   font-size: 20px;
   padding: 38px 0 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #No86 {
@@ -942,7 +942,7 @@
   font-size: 20px;
   padding: 38px 0 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #Nectar {
@@ -953,7 +953,7 @@
   font-size: 22px;
   padding: 100px 0 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
 }
 
 #Prometheus {
@@ -965,5 +965,65 @@
   font-size: 24px;
   padding: 10px 40px 10px;
   color: #fff;
-  background-color: rgb(63,81,181);
+  background-color: rgb(63, 81, 181);
+}
+
+[id^="seat"] {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 10px;
+  border: 1px solid #000;
+}
+
+[id^="text"] {
+  position: absolute;
+  left: 42px;
+  width: 70px;
+  height: 24px;
+}
+
+#seat4 {
+  top: 730px;
+  background-color: #ff9900;
+}
+
+#text4 {
+  top: 730px;
+}
+
+#seat6 {
+  top: 760px;
+  background-color: rgb(63, 81, 181);
+}
+
+#text6 {
+  top: 760px;
+}
+
+#seatUse {
+  top: 790px;
+  background-color: #fff;
+}
+
+#textUse {
+  top: 790px;
+}
+
+#seatOver {
+  top: 820px;
+  background-color: rgba(255, 68, 68, 1);
+}
+
+#textOver {
+  top: 820px;
+}
+
+#seatReserved {
+  top: 850px;
+  background-color: rgba(158, 249, 111, 1);
+}
+
+#textRes {
+  top: 850px;
 }
