@@ -425,24 +425,8 @@ $(function() {
 
   // すべてリセット
   $(".allReset").on("tap", function() {
-
-    swal({
-            title: "リセットしますか？",
-            text: "",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3f51b5",
-            confirmButtonText: "Yes",
-            closeOnConfirm: true
-        },
-        function() {
-
-          // ページを更新
-          location.reload();
-
-        }
-    );
-
+    modal();
+    
     return false;
   });
 
