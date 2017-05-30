@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+#modalContents {
+  width: 50%;
+  margin: 0;
+  padding: 10px 20px;
+  background: #fff;
+  position: fixed;
+  display: none;
+  z-index: 2;
+}
+
+#modalOverlay {
+  z-index: 1;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-color: rgba( 0, 0, 0, 0.75);
+}
+
+.buttonLink {
+  color: #00f;
+  text-decoration: underline;
+}
+
+.buttonLink:hover {
+  cursor: pointer;
+  color: #f00;
+}
