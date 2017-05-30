@@ -981,62 +981,66 @@
   background-color: rgb(63, 81, 181);
 }
 
+.discription {
+  background-color: #eee;
+}
+
 [id^="seat"] {
   position: absolute;
   width: 24px;
   height: 24px;
-  left: 10px;
+  left: 17px;
   border: 1px solid #000;
 }
 
 [id^="text"] {
   position: absolute;
-  left: 42px;
+  left: 47px;
   width: 70px;
   height: 24px;
 }
 
 #seat4 {
-  top: 730px;
+  top: 770px;
   background-color: #ff9900;
 }
 
 #text4 {
-  top: 730px;
+  top: 770px;
 }
 
 #seat6 {
-  top: 760px;
+  top: 800px;
   background-color: rgb(63, 81, 181);
 }
 
 #text6 {
-  top: 760px;
+  top: 800px;
 }
 
 #seatUse {
-  top: 790px;
+  top: 830px;
   background-color: #fff;
 }
 
 #textUse {
-  top: 790px;
+  top: 830px;
 }
 
 #seatOver {
-  top: 820px;
+  top: 860px;
   background-color: rgba(255, 68, 68, 1);
 }
 
 #textOver {
-  top: 820px;
+  top: 860px;
 }
 
 #seatReserved {
-  top: 850px;
+  top: 890px;
   background-color: rgba(158, 249, 111, 1);
 }
 
 #textRes {
-  top: 850px;
+  top: 890px;
 }
