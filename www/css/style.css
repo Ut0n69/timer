@@ -29,6 +29,19 @@
   color: #FFF;
 }
 
+.allReset {
+  position: absolute;
+  left: 300px;
+  top: 7px;
+  z-index: 10;
+  font-size: 16px;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 10px 40px 10px 40px;
+  background-color: black;
+  font-style: italic;
+}
+
 #confirm {
   position: absolute;
   left: 940px;
