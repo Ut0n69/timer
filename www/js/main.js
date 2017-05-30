@@ -28,16 +28,48 @@ var StopWatch = function(_continerId) {
   // シングルタップ 予約の設定
   $(this.continerSelecter).on("tap", function() {
 
+    // 使用中かどうか
     if (self.checkStatus == true) {
       if ($("#switch-2").prop("checked")) {
-        $("#" + _continerId).css({
-          'background-color': reserved
-        });
+
+        for (var i = 0; i < 1; i++) {
+
+          arr.push(_continerId);
+          chkArr = arr.filter(function(x, i, self) {
+            return self.indexOf(x) === i && i !== self.lastIndexOf(x);
+          });
+
+          if (chkArr.length == 0) {
+            $("#" + _continerId).css({
+              'background-color': reserved
+            });
+          } else {
+            $.each(arr, function(i, val) {
+              $("#" + _continerId).css({
+                'background-color': ''
+              });
+
+              // 重複項目にundefinedを代入
+              if (val == _continerId) {
+                arr[i] = void 0;
+              }
+            });
+            chkArr.length = 0;
+          }
+
+          // undefined埋め
+          arrTmp = $.grep(arr, function(e) {
+            return e;
+          });
+          arr = arrTmp;
+
+        }
+
       } else {
-        console.log("false");
+        console.log("SingleTapIsGone");
       }
     } else {
-      console.log("test");
+      console.log("DoNotUse");
     }
 
 
@@ -49,54 +81,7 @@ var StopWatch = function(_continerId) {
 
     // 複数選択
     if ($("#switch-2").prop("checked")) {
-
-      for (var i = 0; i < 1; i++) {
-
-        if (self.checkStatus == false) {
-          console.log("do not use");
-          $.each(arr, function(i, val) {
-            console.log(val);
-          });
-          // break;
-        }
-
-        arr.push(_continerId);
-        chkArr = arr.filter(function(x, i, self) {
-          return self.indexOf(x) === i && i !== self.lastIndexOf(x);
-        });
-
-        self.stop();
-        self.reset();
-        self.start();
-
-        if (chkArr.length == 0) {
-          $("#" + _continerId).css({
-            'background-color': empty
-          });
-        } else {
-          $.each(arr, function(i, val) {
-            $("#" + _continerId).css({
-              'background-color': ''
-            });
-
-            // 重複項目にundefinedを代入
-            if (val == _continerId) {
-              arr[i] = void 0;
-            }
-          });
-          chkArr.length = 0;
-        }
-
-        // undefined埋め
-        arrTmp = $.grep(arr, function(e) {
-          return e;
-        });
-        arr = arrTmp;
-
-      }
-
-      console.log(arr);
-
+      console.log("DoNotUse");
       // 単体選択
     } else {
 
