@@ -7,11 +7,11 @@
   background: #fff;
   position: fixed;
   display: none;
-  z-index: 2;
+  z-index: 7;
 }
 
 #modalOverlay {
-  z-index: 1;
+  z-index: 6;
   display: none;
   position: fixed;
   top: 0;
