@@ -5,7 +5,7 @@ function downMenu(val) {
     '<div class="bg"><p class="menuClose" id="downMenuClose">' + '×' + '</p></div>' +
     '<p class="menuTitle">滞在時間はかる君</p>' +
     '<p class="menuReset">リセット</p>' +
-    '<p class="menuDes">機能説明(未実装)</p>' +
+    '<p class="menuDes">操作説明</p>' +
     '</div>'
   );
 
@@ -31,6 +31,38 @@ function downMenu(val) {
     return false;
   });
 
+  $(".menuDes").on("tap", function() {
+    $('body').prepend(
+      '<div id="howToUse">' +
+      '<p class="back">×</p>' +
+      '<img class="useImg" src="./images/howToUse.png" />' +
+      '</div>'
+    );
+
+    $("#downMenuOverlay").fadeOut("fast", function() {
+      $('#downMenuOverlay').remove();
+    });
+    $("#downMenuContents").fadeOut("fast", function() {
+      $('#downMenuContents').remove();
+    });
+    $("#howToUse").fadeIn("fast", function() {
+      $("#howToUse").show();
+    });
+
+    $(".back").on("tap", function() {
+      $("#howToUse").fadeOut("fast", function() {
+        $("#howToUse").remove();
+      });
+
+      return false;
+    });
+
+
+    return false;
+  });
+
+
+
   // コンテンツをフェードインする
   $("#downMenuContents").slideDown("fast");
 
@@ -45,6 +77,5 @@ function downMenu(val) {
     return false;
   });
 
-  $(window).resize(centering);
 
 }
