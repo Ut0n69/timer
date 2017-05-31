@@ -98,10 +98,8 @@ var StopWatch = function(_continerId) {
           var tmpText = text.substr(2);
         }
 
-        getNowTime = moment().format('HH:mm');
-
         $.toast({
-          text: '開始しました' + '<br />' + getNowTime,
+          text: '開始しました',
           heading: tmpText,
           showHideTransition: 'fade',
           allowToastClose: true,
