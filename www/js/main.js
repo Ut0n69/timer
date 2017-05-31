@@ -423,16 +423,9 @@ $(function() {
     return false;
   });
 
-  // すべてリセット
-  $(".allReset").on("tap", function() {
-    modal();
-
-    return false;
-  });
-
   // ハンバーガーメニュー
   $(".menu").on("tap", function() {
-    modal();
+    downMenu("HEy");
 
     return false;
   });
