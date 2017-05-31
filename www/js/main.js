@@ -8,7 +8,7 @@ var empty = 'rgba(175, 175, 175, 0.6)';
 var used = 'rgba(255, 255, 255, 0)';
 var over = 'rgba(255, 68, 68, 1)';
 var beer = 'rgba(255, 241, 15, 1)';
-var reserved = 'rgba(158, 249, 111, 1)';
+var reserved = 'rgba(153, 204, 0, 1)';
 
 /*------------------
     class: StopWatch
@@ -30,7 +30,7 @@ var StopWatch = function(_continerId) {
 
     // 使用中かどうか
     if (self.checkStatus == true) {
-      if ($("#switch-2").prop("checked")) {
+      if ($("#sw").prop("checked")) {
 
         for (var i = 0; i < 1; i++) {
 
@@ -80,7 +80,7 @@ var StopWatch = function(_continerId) {
   $(this.continerSelecter).on("taphold", function() {
 
     // 複数選択
-    if ($("#switch-2").prop("checked")) {
+    if ($("#sw").prop("checked")) {
       console.log("DoNotUse");
       // 単体選択
     } else {
@@ -385,7 +385,7 @@ $(function() {
   });
 
   // 座席複数指定の選択検知
-  $("#switch-2").on('tap', function() {
+  $("#sw").on('tap', function() {
     if ($(this).is(":checked")) {
       // $("#confirm").show();
     } else {
@@ -426,7 +426,7 @@ $(function() {
   // すべてリセット
   $(".allReset").on("tap", function() {
     modal();
-    
+
     return false;
   });
 
