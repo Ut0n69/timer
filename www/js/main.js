@@ -430,4 +430,12 @@ $(function() {
     return false;
   });
 
+  // ハンバーガーメニュー
+  $(".menu").on("tap", function() {
+    modal();
+
+    return false;
+  });
+
+
 });
