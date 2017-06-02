@@ -34,16 +34,18 @@
   font-size: 32px;
 }
 .menuReset {
-  text-align: center;
+  position: absolute;
+  left: 310px;
+  top: 86px;
   font-size: 32px;
-  padding-top: 60px;
   font-style: italic;
   text-decoration: underline;
 }
 .menuDes {
-  text-align: center;
+  position: absolute;
+  left: 310px;
+  top: 166px;
   font-size: 32px;
-  padding-top: 30px;
   font-style: italic;
   text-decoration: underline;
 }

@@ -100,22 +100,6 @@
   font-style: italic;
 }
 
-#confirm {
-  position: absolute;
-  left: 940px;
-  top: 600px;
-}
-
-.square_btn {
-  display: inline-block;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  background: rgb(63, 81, 181);
-  color: #FFF;
-  border-bottom: solid 4px #627295;
-  border-radius: 3px;
-}
-
 [id^="No"], #Prometheus, #Nectar {
   position: absolute;
   font-weight: bold;

@@ -3,9 +3,9 @@ function downMenu(val) {
   $('body').prepend(
     '<div id="downMenuContents">' +
     '<div class="bg"><p class="menuClose" id="downMenuClose">' + '×' + '</p></div>' +
-    '<p class="menuTitle">滞在時間はかる君</p>' +
-    '<p class="menuReset">リセット</p>' +
-    '<p class="menuDes">操作説明</p>' +
+    '<div class="menuTitle">滞在時間はかる君</div>' +
+    '<div class="menuReset">リセット</div>' +
+    '<div class="menuDes">操作説明</div>' +
     '</div>'
   );
 
