@@ -20,7 +20,7 @@ var StopWatch = function(_continerId) {
   this.stopBtnSelecter = ".stopBtn";
   this.resetBtnSelecter = ".resetBtn";
   this.timerTextSelecter = ".timerText";
-  this.defaultInterval = 60;
+  this.defaultInterval = 60000;
   this.timerId = null;
 
   this.checkStatus = true;
