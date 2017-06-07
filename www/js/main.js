@@ -20,7 +20,7 @@ var StopWatch = function(_continerId) {
   this.stopBtnSelecter = ".stopBtn";
   this.resetBtnSelecter = ".resetBtn";
   this.timerTextSelecter = ".timerText";
-  this.defaultInterval = 60000;
+  this.defaultInterval = 60;
   this.timerId = null;
 
   this.checkStatus = true;
@@ -71,7 +71,6 @@ var StopWatch = function(_continerId) {
     } else {
       console.log("DoNotUse");
     }
-
 
     return false;
   });
@@ -182,8 +181,6 @@ var StopWatch = function(_continerId) {
           afterHidden: function() {}
         });
 
-
-
         var getTime = $("#" + _continerId + " .timerText").text();
         var tmp = ~~getTime;
 
@@ -230,14 +227,6 @@ var StopWatch = function(_continerId) {
     return false;
   });
 
-  $(this.continerSelecter + ">" + this.stopBtnSelecter).on("tap", function() {
-    self.stop();
-    return false;
-  });
-  $(this.continerSelecter + ">" + this.resetBtnSelecter).on("tap", function() {
-    self.reset();
-    return false;
-  });
 };
 
 StopWatch.prototype.status = function() {
@@ -262,6 +251,10 @@ StopWatch.prototype.run = function() {
   this.checkStatus = false;
   timer = setInterval(function() {
     var num = $(self.continerSelecter + ">" + self.timerTextSelecter).text();
+
+    if (self.checkStatus == true) {
+      clearInterval(timer);
+    }
 
     // 時間切れ
     if (~~num <= 0) {
