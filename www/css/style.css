@@ -1,3 +1,11 @@
+.menu, .selectBtn {
+  margin-top: 8px;
+}
+
+.bg, .menuTitle {
+ margin-top: 12px;
+}
+
 #howToUse {
   position: absolute;
   background-color: #fff;
