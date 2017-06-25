@@ -262,7 +262,15 @@ StopWatch.prototype.run = function() {
         'background-color': over,
         'color': '#000'
       });
-      $(self.continerSelecter + ">" + self.timerTextSelecter).text(self.continerSelecter.substr(3));
+
+      if (self.continerSelecter.substr(1) == "Prometheus") {
+        $(self.continerSelecter + ">" + self.timerTextSelecter).text("");
+      } else if (self.continerSelecter.substr(1) == "Nectar") {
+        $(self.continerSelecter + ">" + self.timerTextSelecter).text("");
+      } else {
+        $(self.continerSelecter + ">" + self.timerTextSelecter).text(self.continerSelecter.substr(3));
+      }
+
       clearInterval(timer);
     } else {
       $(self.continerSelecter + ">" + self.timerTextSelecter).text(~~num - 1);
