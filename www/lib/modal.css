@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 #modalContents {
   width: 50%;
   margin: 0;
@@ -11,7 +10,7 @@
 }
 
 #modalOverlay {
-  z-index: 6;
+  z-index: 9991;
   display: none;
   position: fixed;
   top: 0;
@@ -21,12 +20,49 @@
   background-color: rgba( 0, 0, 0, 0.75);
 }
 
-.buttonLink {
-  color: #00f;
-  text-decoration: underline;
+#modalConfContents {
+  width: 70%;
+  height: 30%;
+  margin: 0;
+  background: #fff;
+  position: fixed;
+  display: none;
+  z-index: 9999;
 }
 
-.buttonLink:hover {
-  cursor: pointer;
-  color: #f00;
+.conf-data {
+  font-size: 35px;
+  padding: 17px 0 20px 10px;
+  background-color: rgb(63, 81, 181);
+  color: #fff;
+  font-style: italic;
+}
+
+.conf-btn {
+  text-align: center;
+}
+
+.conf-cancel {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 26px;
+  background: #bfbfbf;
+  text-decoration: none;
+  padding-top: 11px;
+  margin-right: 10px;
+}
+
+.conf-end {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 40px;
+  background: #f90;
+  text-decoration: none;
+  margin-left: 10px;
 }
