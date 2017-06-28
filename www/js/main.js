@@ -25,62 +25,56 @@ var StopWatch = function(_continerId) {
 
   this.checkStatus = true;
 
-  // シングルタップ 予約の設定
+  // テーブル選択
   $(this.continerSelecter).on("tap", function() {
 
-    // 使用中かどうか
-    if (self.checkStatus == true) {
-      if ($("#sw").prop("checked")) {
+    // 予約
+    if ($("#sw").prop("checked")) {
 
-        for (var i = 0; i < 1; i++) {
+        // 使用中かどうか
+        if (self.checkStatus == true) {
+          if ($("#sw").prop("checked")) {
 
-          arr.push(_continerId);
-          chkArr = arr.filter(function(x, i, self) {
-            return self.indexOf(x) === i && i !== self.lastIndexOf(x);
-          });
+            for (var i = 0; i < 1; i++) {
 
-          if (chkArr.length == 0) {
-            $("#" + _continerId).css({
-              'background-color': reserved
-            });
-          } else {
-            $.each(arr, function(i, val) {
-              $("#" + _continerId).css({
-                'background-color': ''
+              arr.push(_continerId);
+              chkArr = arr.filter(function(x, i, self) {
+                return self.indexOf(x) === i && i !== self.lastIndexOf(x);
               });
 
-              // 重複項目にundefinedを代入
-              if (val == _continerId) {
-                arr[i] = void 0;
+              if (chkArr.length == 0) {
+                $("#" + _continerId).css({
+                  'background-color': reserved
+                });
+              } else {
+                $.each(arr, function(i, val) {
+                  $("#" + _continerId).css({
+                    'background-color': ''
+                  });
+
+                  // 重複項目にundefinedを代入
+                  if (val == _continerId) {
+                    arr[i] = void 0;
+                  }
+                });
+                chkArr.length = 0;
               }
-            });
-            chkArr.length = 0;
+
+              // undefined埋め
+              arrTmp = $.grep(arr, function(e) {
+                return e;
+              });
+              arr = arrTmp;
+
+            }
+
+          } else {
+            console.log("SingleTapIsGone");
           }
-
-          // undefined埋め
-          arrTmp = $.grep(arr, function(e) {
-            return e;
-          });
-          arr = arrTmp;
-
+        } else {
+          console.log("DoNotUse");
         }
 
-      } else {
-        console.log("SingleTapIsGone");
-      }
-    } else {
-      console.log("DoNotUse");
-    }
-
-    return false;
-  });
-
-  // ロングタップ テーブル選択
-  $(this.continerSelecter).on("taphold", function() {
-
-    // 複数選択
-    if ($("#sw").prop("checked")) {
-      console.log("DoNotUse");
       // 単体選択
     } else {
 
@@ -127,31 +121,10 @@ var StopWatch = function(_continerId) {
         self.start();
         self.status();
 
-        // swal({
-        //         title: _continerId + " を使用しますか？",
-        //         text: "",
-        //         type: "warning",
-        //         showCancelButton: true,
-        //         confirmButtonColor: "#3f51b5",
-        //         confirmButtonText: "Yes",
-        //         closeOnConfirm: true
-        //     },
-        //     function() {
-        //
-        //         $("#" + _continerId).css({
-        //             'background-color': used
-        //         });
-        //         $("#" + _continerId + " .startBtn").hide();
-        //         $("#" + _continerId + " .timerText").show();
-        //         self.stop();
-        //         self.reset();
-        //         self.start();
-        //         self.status();
-        //     }
-        // );
 
         // 座席使用終了
       } else {
+
 
         var tmpText;
         if (this.id == "Prometheus") {
@@ -163,62 +136,29 @@ var StopWatch = function(_continerId) {
           var tmpText = text.substr(2);
         }
 
-        $.toast({
-          text: "終了しました",
-          heading: tmpText,
-          showHideTransition: 'fade',
-          allowToastClose: true,
-          hideAfter: 1750,
-          stack: 5,
-          position: 'top-left',
+        modalConf(tmpText);
 
-          bgColor: '#444444',
-          textColor: '#eeeeee',
-          textAlign: 'left',
-          beforeShow: function() {},
-          afterShown: function() {},
-          beforeHide: function() {},
-          afterHidden: function() {}
+        $(".conf-end").on("tap", function() {
+          $("#modalConfContents,#modalOverlay").fadeOut("fast", function() {
+            $('#modalOverlay').remove();
+            $('#modalConfContents').remove();
+
+            var getTime = $("#" + _continerId + " .timerText").text();
+            var tmp = ~~getTime;
+
+            self.stop();
+            self.reset();
+            self.status();
+            $("#" + _continerId).css({
+              'background-color': '',
+              'color': '#fff'
+            });
+            $("#" + _continerId + " .timerText").hide();
+            $("#" + _continerId + " .startBtn").show();
+
+          });
+
         });
-
-        var getTime = $("#" + _continerId + " .timerText").text();
-        var tmp = ~~getTime;
-
-        self.stop();
-        self.reset();
-        self.status();
-        $("#" + _continerId).css({
-          'background-color': '',
-          'color': '#fff'
-        });
-        $("#" + _continerId + " .timerText").hide();
-        $("#" + _continerId + " .startBtn").show();
-
-        // swal({
-        //         title: _continerId + " 終了しますか？",
-        //         text: "",
-        //         type: "warning",
-        //         showCancelButton: true,
-        //         confirmButtonColor: "#3f51b5",
-        //         confirmButtonText: "Yes",
-        //         closeOnConfirm: true
-        //     },
-        //     function() {
-        //
-        //         var getTime = $("#" + _continerId + " .timerText").text();
-        //         var tmp = ~~getTime;
-        //
-        //         self.stop();
-        //         self.reset();
-        //         self.status();
-        //         $("#" + _continerId).css({
-        //             'background-color': '',
-        //             'opacity': ''
-        //         });
-        //         $("#" + _continerId + " .timerText").hide();
-        //         $("#" + _continerId + " .startBtn").show();
-        //     }
-        // );
 
       }
 
@@ -289,7 +229,7 @@ $(function() {
   var nectar = new StopWatch("Nectar");
   var prometheus = new StopWatch("Prometheus");
 
-  for ( var i = 1; i <= 86; i++) {
+  for (var i = 1; i <= 86; i++) {
     str = String(i);
     arr[i] = new StopWatch("No" + str);
   }
@@ -351,7 +291,7 @@ $(function() {
 
   // ハンバーガーメニュー
   $(".menu").on("tap", function() {
-    downMenu("HEy");
+    downMenu();
 
     return false;
   });
