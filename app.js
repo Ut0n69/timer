@@ -18,17 +18,6 @@ var server = app.listen(3000, function() {
   console.log('It works!');
 });
 
-/*------------------
-    リダイレクト
-------------------*/
-app.get('/timer', function(req, res) {
-  res.sendFile(__dirname + '/www/timer.html');
-});
-
-// app.get('/manager', function(req, res) {
-//     res.sendFile(__dirname + '/www/manager.html');
-// });
-
 
 /*------------------
     MySQL
@@ -43,16 +32,6 @@ var dbConfig = {
 
 var dbConnection = mysql.createConnection(dbConfig);
 
-app.get('/timer/api', function(req, res) {
-
-  // MySQLデータベースからデータのリストを取得
-  dbConnection.query('SELECT * FROM hist', function(err, rows, fields) {
-    if (err) throw err;
-    res.send(rows);
-  });
-
-});
-
 
 /*------------------
     socket.io
@@ -65,13 +44,35 @@ io.sockets.on("connection", function(socket) {
   socket.on("getData", function(data) {
 
     console.log(data);
-    
-    query = 'insert into hist(date, tableNum, stayTime, endTime ) values("' + data.date + '", ' + data.tableNum + ', ' + data.stayTime + ', ' + data.endTime + ');';
+
+    query = 'insert into hist(date, tableNum, stayTime, endTime ) values("' + data.date + '", "' + data.tableNum + '", "' + data.stayTime + '", "' + data.endTime + '");';
     dbConnection.query(query, function(err, rows, fields) {
       if (err) throw err;
-      console.log(rows);
     });
 
   });
 
+  socket.on("getHist", function() {
+    dbConnection.query('SELECT * FROM hist', function(err, rows, fields) {
+      if (err) throw err;
+      socket.emit("toHist", rows);
+      });
+
+  })
+
+});
+
+/*------------------
+    リダイレクト
+------------------*/
+app.get('/timer', function(req, res) {
+  res.sendFile(__dirname + '/www/timer.html');
+});
+
+// app.get('/manager', function(req, res) {
+//     res.sendFile(__dirname + '/www/manager.html');
+// });
+
+app.get('/timer/api', function(req, res) {
+  res.sendFile(__dirname + '/www/timer-hist.html');
 });
