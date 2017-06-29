@@ -69,9 +69,9 @@ app.get('/timer', function(req, res) {
   res.sendFile(__dirname + '/www/timer.html');
 });
 
-// app.get('/manager', function(req, res) {
-//     res.sendFile(__dirname + '/www/manager.html');
-// });
+app.get('/manager', function(req, res) {
+    res.sendFile(__dirname + '/www/manager.html');
+});
 
 app.get('/timer/api', function(req, res) {
   res.sendFile(__dirname + '/www/timer-hist.html');
