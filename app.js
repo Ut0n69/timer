@@ -25,7 +25,7 @@ var server = app.listen(3000, function() {
 var dbConfig = {
   host: '127.0.0.1',
   user: 'root',
-  password: '<<<<<PASSWORD>>>>>',
+  password: 'PASS',
   database: 'timerDB',
   port: 3306
 };
@@ -42,8 +42,6 @@ var io = socketIO.listen(server);
 io.sockets.on("connection", function(socket) {
 
   socket.on("getData", function(data) {
-
-    console.log(data);
 
     query = 'insert into hist(date, tableNum, stayTime, endTime ) values("' + data.date + '", "' + data.tableNum + '", "' + data.stayTime + '", "' + data.endTime + '");';
     dbConnection.query(query, function(err, rows, fields) {
