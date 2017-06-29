@@ -10,6 +10,8 @@ var over = 'rgba(255, 68, 68, 1)';
 var beer = 'rgba(255, 241, 15, 1)';
 var reserved = 'rgba(153, 204, 0, 1)';
 
+var socket = io.connect(location.origin);
+
 /*------------------
     class: StopWatch
 ------------------*/
@@ -139,6 +141,16 @@ var StopWatch = function(_continerId) {
         modalConf(tmpText);
 
         $(".conf-end").on("tap", function() {
+
+          // サーバーに情報を送信
+          var sendData = {};
+          sendData.date = moment().format('YYYYMMDD');
+          sendData.stayTime = (120 - $("#" + _continerId + " .timerText").text());
+          sendData.endTime = moment().format('HH:mm');
+          sendData.tableNum = tmpText;
+          socket.emit("getData", sendData);
+
+
           $("#modalConfContents,#modalOverlay").fadeOut("fast", function() {
             $('#modalOverlay').remove();
             $('#modalConfContents').remove();
