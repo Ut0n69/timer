@@ -22,7 +22,7 @@ var StopWatch = function(_continerId) {
   this.stopBtnSelecter = ".stopBtn";
   this.resetBtnSelecter = ".resetBtn";
   this.timerTextSelecter = ".timerText";
-  this.defaultInterval = 60000;
+  this.defaultInterval = 10;
   this.timerId = null;
 
   this.checkStatus = true;
@@ -142,12 +142,19 @@ var StopWatch = function(_continerId) {
 
         $(".conf-end").on("tap", function() {
 
-          // サーバーに情報を送信
           var sendData = {};
           sendData.date = moment().format('YYYYMMDD');
-          sendData.stayTime = (120 - $("#" + _continerId + " .timerText").text());
           sendData.endTime = moment().format('HH:mm');
           sendData.tableNum = tmpText;
+
+          // 終了したかどうか
+          if ($("#" + _continerId).css("background-color") == "rgb(255, 68, 68)") {
+            sendData.stayTime = (120);
+          } else {
+            sendData.stayTime = (120 - $("#" + _continerId + " .timerText").text());
+          }
+
+          // サーバーに情報を送信
           socket.emit("getData", sendData);
 
 
