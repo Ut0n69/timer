@@ -100,7 +100,7 @@ function downMenu(val) {
       if (errData.name == "") {
         $("#howToUse").append(
           '<div class="err-form">' +
-          '<img class="useImg" src="./images/dogeza1.jpg" />' +
+          '<img class="useImg" src="./images/dogeza.png" />' +
           '<h3 class="send-form-text">不具合の報告ありがとうございます！</h3>' +
           '<p>もし，これによりご迷惑をおかけしていましたら，大変申し訳御座いませんでした...</p>' +
           '<p>この不具合はすぐに修正いたします．お手数おかけしました...</p>' +
@@ -111,7 +111,7 @@ function downMenu(val) {
         $("#howToUse").append(
           '<div class="err-form">' +
           '<p class="send-form-name">' + errData.name + ' さん</p>' +
-          '<img class="useImg" src="./images/dogeza1.jpg" />' +
+          '<img class="useImg" src="./images/dogeza.png" />' +
           '<h3 class="send-form-text">不具合の報告ありがとうございます！</h3>' +
           '<p>もし，これによりご迷惑をおかけしていましたら，大変申し訳御座いませんでした...</p>' +
           '<p>この不具合はすぐに修正いたします．お手数おかけしました...</p>' +
