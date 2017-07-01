@@ -59,7 +59,24 @@ io.sockets.on("connection", function(socket) {
       socket.emit("toHist", rows);
       });
 
-  })
+  });
+
+  socket.on("getHistErr", function() {
+    dbConnection.query('SELECT * FROM err', function(err, rows, fields) {
+      if (err) throw err;
+      socket.emit("toHistErr", rows);
+      });
+
+  });
+
+
+  socket.on("getErr", function(data) {
+    query = 'insert into err(date, name, message ) values("' + data.date + '", "' + data.name + '", "' + data.massage + '");';
+    dbConnection.query(query, function(err, rows, fields) {
+      if (err) throw err;
+    });
+  });
+
 
 });
 
@@ -74,6 +91,10 @@ app.get('/manager', function(req, res) {
     res.sendFile(__dirname + '/www/manager.html');
 });
 
-app.get('/timer/api', function(req, res) {
+app.get('/timer/hist', function(req, res) {
   res.sendFile(__dirname + '/www/timer-hist.html');
+});
+
+app.get('/timer/err', function(req, res) {
+  res.sendFile(__dirname + '/www/timer-err.html');
 });

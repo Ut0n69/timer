@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+
+  <title>エラー報告 | はかる君</title>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="../lib/jquery/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+  <table class="table"></table>
+
+  <script>
+    var socket = io.connect(location.origin);
+    var $table = $(".table");
+
+    socket.emit("getHistErr");
+
+    socket.on("toHistErr", function(data) {
+      for (i in data) {
+        $table.append(
+          '<tr>' +
+          '  <th style="font-weight: normal;">' + data[i].id + '</th>' +
+          '  <th style="font-weight: normal;">' + data[i].date + '</th>' +
+          '  <th style="font-weight: normal;">' + data[i].name + '</th>' +
+          '  <th style="font-weight: normal;">' + data[i].message + '</th>' +
+          '</tr>'
+        );
+      }
+    });
+  </script>
+</body>
