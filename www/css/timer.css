@@ -1042,47 +1042,48 @@
   height: 24px;
 }
 
-#seat4 {
-  top: 770px;
-  background-color: rgb(63, 81, 181);
-}
-
-#text4 {
-  top: 770px;
-}
 
 #seat6 {
-  top: 800px;
+  top: 780px;
   background-color: rgb(63, 81, 181);
 }
 
 #text6 {
-  top: 800px;
+  top: 780px;
 }
 
 #seatUse {
-  top: 830px;
+  top: 810px;
   background-color: #fff;
 }
 
 #textUse {
-  top: 830px;
+  top: 810px;
+}
+
+#seatWarning {
+  top: 840px;
+  background-color: rgba(255, 241, 15, 1);
+}
+
+#textWarning {
+  top: 840px;
 }
 
 #seatOver {
-  top: 860px;
+  top: 870px;
   background-color: rgba(255, 68, 68, 1);
 }
 
 #textOver {
-  top: 860px;
+  top: 870px;
 }
 
 #seatReserved {
-  top: 890px;
+  top: 900px;
   background-color: rgba(158, 249, 111, 1);
 }
 
 #textRes {
-  top: 890px;
+  top: 900px;
 }

@@ -6,11 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
-	<title>滞在時間はかる君</title>
+	<title>はかる君</title>
 
 	<link rel="apple-touch-icon-precomposed" href="../images/timer.png" />
 	<link rel="stylesheet" href="../css/timer.css">
-	<link rel="stylesheet" href="../lib/sweetalert/sweetalert.min.css">
 	<link rel="stylesheet" href="../lib/icon.css">
 	<link rel="stylesheet" href="../lib/material.min.css" />
 	<link rel="stylesheet" href="../lib/toast.css" />
@@ -21,7 +20,6 @@
 	<script src="../lib/jquery/jquery-1.11.1.min.js"></script>
 	<script src="../lib/jquerymobile.min.js"></script>
 	<script src="../lib/cookie.min.js"></script>
-	<script src="../lib/sweetalert/sweetalert.min.js"></script>
 	<script src="../lib/material.min.js"></script>
 	<script src="../lib/moment.min.js"></script>
 	<script src="../lib/toast.js"></script>
@@ -397,6 +395,8 @@
 					<p id="text6">: 空席</p>
 					<div id="seatUse"></div>
 					<p id="textUse">: 使用中</p>
+					<div id="seatWarning"></div>
+					<p id="textWarning">: 15分前</p>
 					<div id="seatOver"></div>
 					<p id="textOver">: 時間切れ</p>
 					<div id="seatReserved"></div>
@@ -405,7 +405,10 @@
 
 			</div>
 		</main>
-	</div>
+
+
+
+		</div>
 
 	<script src="../js/timer.js"></script>
 

@@ -1,5 +1,8 @@
 'use strict';
 
+var SQL_PASS = "";
+var LISTEN_PORT = 3000;
+
 var express = require('express');
 var mysql = require('mysql');
 var socketIO = require("socket.io");
@@ -11,7 +14,7 @@ var app = express();
 app.use(express.static('www'));
 
 // サーバを開始
-var server = app.listen(3000, function() {
+var server = app.listen(LISTEN_PORT, function() {
   var host = server.address().address;
   var port = server.address().port;
 
@@ -25,7 +28,7 @@ var server = app.listen(3000, function() {
 var dbConfig = {
   host: '127.0.0.1',
   user: 'root',
-  password: 'PASS',
+  password: SQL_PASS,
   database: 'timerDB',
   port: 3306
 };
