@@ -2,12 +2,13 @@ var arr = [];
 var chkArr = [];
 var arrTmp;
 var getNowTime;
+var left10min = [];
 
 // color
 var empty = 'rgba(175, 175, 175, 0.6)';
 var used = 'rgba(255, 255, 255, 0)';
 var over = 'rgba(255, 68, 68, 1)';
-var beer = 'rgba(255, 241, 15, 1)';
+var warnning = 'rgba(255, 241, 15, 0.5)';
 var reserved = 'rgba(153, 204, 0, 1)';
 
 var socket = io.connect(location.origin);
@@ -22,7 +23,7 @@ var StopWatch = function(_continerId) {
   this.stopBtnSelecter = ".stopBtn";
   this.resetBtnSelecter = ".resetBtn";
   this.timerTextSelecter = ".timerText";
-  this.defaultInterval = 10;
+  this.defaultInterval = 1000;
   this.timerId = null;
 
   this.checkStatus = true;
@@ -127,7 +128,6 @@ var StopWatch = function(_continerId) {
         // 座席使用終了
       } else {
 
-
         var tmpText;
         if (this.id == "Prometheus") {
           tmpText = "プロメテウス"
@@ -139,6 +139,16 @@ var StopWatch = function(_continerId) {
         }
 
         modalConf(tmpText);
+
+        $(".conf-edit").on("tap", function() {
+          if ($("#" + _continerId).css("background-color") == "rgb(255, 68, 68)") {
+            alert("再スタートしてから編集してください")
+          } else {
+            modalConfEdit(tmpText);
+          }
+
+          return false;
+        });
 
         $(".conf-end").on("tap", function() {
 
@@ -216,7 +226,7 @@ StopWatch.prototype.run = function() {
     }
 
     // 時間切れ
-    if (~~num <= 0) {
+    if (~~num <= 1) {
       $(self.continerSelecter).css({
         'background-color': over,
         'color': '#000'
@@ -231,6 +241,13 @@ StopWatch.prototype.run = function() {
       }
 
       clearInterval(timer);
+    } else if (~~num <= 16 && ~~num >= 1) {
+      $(self.continerSelecter).css({
+        'background-color': warnning,
+        'color': '#000'
+      });
+      $(self.continerSelecter + ">" + self.timerTextSelecter).text(~~num - 1);
+      // console.log(self.continerSelecter);
     } else {
       $(self.continerSelecter + ">" + self.timerTextSelecter).text(~~num - 1);
     }
@@ -268,6 +285,8 @@ $(function() {
   $(window).on('touchmove.noScroll', function(e) {
     e.preventDefault();
   });
+
+
 
   // 座席複数指定の選択検知
   $("#sw").on('tap', function() {

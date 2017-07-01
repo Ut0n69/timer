@@ -30,6 +30,16 @@
   z-index: 9999;
 }
 
+#modalConfEdit {
+  width: 70%;
+  height: 30%;
+  margin: 0;
+  background: #fff;
+  position: fixed;
+  display: none;
+  z-index: 9999;
+}
+
 .conf-data {
   font-size: 35px;
   padding: 17px 0 20px 10px;
@@ -42,16 +52,15 @@
   text-align: center;
 }
 
-.conf-cancel {
+.conf-edit {
   width: 200px;
   height: 200px;
   border-radius: 15px;
   font-family: Arial;
   color: #ffffff;
-  font-size: 26px;
+  font-size: 40px;
   background: #bfbfbf;
   text-decoration: none;
-  padding-top: 11px;
   margin-right: 10px;
 }
 
@@ -65,4 +74,65 @@
   background: #f90;
   text-decoration: none;
   margin-left: 10px;
+}
+
+.conf-ok {
+  border-radius: 60px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 22px;
+  background: rgb(63,81,181);
+  padding: 20px 140px 20px 140px;
+  text-decoration: none;
+  margin: 40px 0 0 110px;
+}
+
+.select-wrap {
+  margin-left: 15px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  min-width: 192px;
+  min-width: 12em;
+  background-color: #ffffff;
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #dfe0d9 100%);
+  background-image: linear-gradient(top, #ffffff 0%, #dfe0d9 100%);
+  border: 1px solid #c0c0c0;
+  color: #333;
+}
+
+.select-wrap select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  appearance: none;
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 200%;
+  width: -webkit-calc(100% + 5em);
+  margin: 0;
+  padding: 11px 35px 11px 11px;
+  padding: .6875rem 2.1875rem .6875rem .6875rem;
+  background: transparent;
+  border: 0;
+  outline: none;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.entypo-down-open-mini:before {
+  font-family: 'entypo', sans-serif;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: 12px;
+  right: .75rem;
+  margin-top: -8px;
+  margin-top: -.5rem;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1;
+  color: #333;
 }
