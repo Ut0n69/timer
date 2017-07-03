@@ -2,6 +2,7 @@
 
 var SQL_PASS = "";
 var LISTEN_PORT = 3000;
+var WEBHOOK_URL = "";
 
 var express = require('express');
 var mysql = require('mysql');
@@ -44,6 +45,8 @@ var io = socketIO.listen(server);
 // サーバーへのアクセス監視
 io.sockets.on("connection", function(socket) {
 
+  socket.emit("webhook", WEBHOOK_URL);
+
   socket.on("getData", function(data) {
 
     query = 'insert into hist(date, tableNum, stayTime, endTime ) values("' + data.date + '", "' + data.tableNum + '", "' + data.stayTime + '", "' + data.endTime + '");';
@@ -57,7 +60,7 @@ io.sockets.on("connection", function(socket) {
     dbConnection.query('SELECT * FROM hist', function(err, rows, fields) {
       if (err) throw err;
       socket.emit("toHist", rows);
-      });
+    });
 
   });
 
@@ -65,7 +68,7 @@ io.sockets.on("connection", function(socket) {
     dbConnection.query('SELECT * FROM err', function(err, rows, fields) {
       if (err) throw err;
       socket.emit("toHistErr", rows);
-      });
+    });
 
   });
 
@@ -88,7 +91,7 @@ app.get('/timer', function(req, res) {
 });
 
 app.get('/manager', function(req, res) {
-    res.sendFile(__dirname + '/www/manager.html');
+  res.sendFile(__dirname + '/www/manager.html');
 });
 
 app.get('/timer/hist', function(req, res) {

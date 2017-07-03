@@ -1,3 +1,10 @@
+var socket = io.connect(location.origin);
+var url;
+
+socket.on("webhook", function(data) {
+  url = data;
+});
+
 function downMenu(val) {
 
   $('body').prepend(
@@ -94,6 +101,18 @@ function downMenu(val) {
       errData.massage = $(".err-form-massage").val();
 
       socket.emit("getErr", errData);
+
+      var text = "日付: " + errData.date + "\n名前: " + errData.name + "\nメッセージ： " + errData.massage;
+      $.ajax({
+        data: 'payload=' + JSON.stringify({
+          "text": text
+        }),
+        dataType: 'json',
+        processData: false,
+        type: 'POST',
+        url: url
+      });
+
 
       $(".err-form").remove();
 
