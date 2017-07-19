@@ -64,10 +64,10 @@ io.sockets.on("connection", function(socket) {
 
   });
 
-  socket.on("getHistErr", function() {
-    dbConnection.query('SELECT * FROM err', function(err, rows, fields) {
+  socket.on("getStatus", function() {
+    dbConnection.query('SELECT * FROM status', function(err, rows, fields) {
       if (err) throw err;
-      socket.emit("toHistErr", rows);
+      socket.emit("toStatus", rows);
     });
 
   });
@@ -98,6 +98,6 @@ app.get('/timer/hist', function(req, res) {
   res.sendFile(__dirname + '/www/timer-hist.html');
 });
 
-app.get('/timer/err', function(req, res) {
-  res.sendFile(__dirname + '/www/timer-err.html');
+app.get('/timer/status', function(req, res) {
+  res.sendFile(__dirname + '/www/timer-status.html');
 });
