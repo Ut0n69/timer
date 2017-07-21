@@ -84,12 +84,25 @@ function modalConfEdit(data) {
       var tmp = '#No' + data;
     }
 
+    // 編集ボタンログーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+    var hash = {};
+    hash.status = "edit";
+    hash.tableNum = data;
+    hash.before = $(tmp + "> .timerText").text();
+    hash.after = val;
+    hash.date = moment().format('MM/DD');
+    hash.time = moment().format('HH:mm:ss');
+    socket.emit("log", hash);
+    // 編集ボタンログーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+
     $(tmp + "> .timerText").text(val);
 
     $('#modalConfEdit').remove();
     $("#modalConfContents,#modalOverlay").fadeOut("fast", function() {
       $('#modalOverlay').remove();
     });
+
 
     return false;
   });

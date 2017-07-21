@@ -167,6 +167,15 @@ var StopWatch = function(_continerId) {
           // サーバーに情報を送信
           socket.emit("getData", sendData);
 
+          // 終了ログーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+          var hash = {};
+          hash.status = "end";
+          hash.tableNum = tmpText;
+          hash.date = moment().format('MM/DD');
+          hash.endTime = moment().format('HH:mm:ss');
+          socket.emit("log", hash);
+          // ログーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
 
           $("#modalConfContents,#modalOverlay").fadeOut("fast", function() {
             $('#modalOverlay').remove();
@@ -203,6 +212,28 @@ StopWatch.prototype.status = function() {
 };
 StopWatch.prototype.start = function() {
   this.run();
+
+  // 開始ログーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  var self = this;
+
+  var tmpText;
+  if (self.continerSelecter == "#Prometheus") {
+    tmpText = "prometheus"
+  } else if (self.continerSelecter == "#Nectar") {
+    tmpText = "nectar"
+  } else {
+    var text = self.continerSelecter;
+    var tmpText = text.substr(3);
+  }
+
+  var hash = {};
+  hash.status = "start";
+  hash.tableNum = tmpText;
+  hash.date = moment().format('MM/DD');
+  hash.time = moment().format('HH:mm:ss');
+  socket.emit("log", hash);
+  // ログーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
 };
 StopWatch.prototype.stop = function() {
   if (this.timerId !== null) {
