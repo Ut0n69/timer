@@ -56,6 +56,7 @@ io.sockets.on("connection", function(socket) {
 
   });
 
+  // ログを返す
   socket.on("getHist", function() {
     dbConnection.query('SELECT * FROM hist', function(err, rows, fields) {
       if (err) throw err;
@@ -64,6 +65,7 @@ io.sockets.on("connection", function(socket) {
 
   });
 
+  // テーブルステータスを返す
   socket.on("getStatus", function() {
     dbConnection.query('SELECT * FROM status', function(err, rows, fields) {
       if (err) throw err;
@@ -72,13 +74,30 @@ io.sockets.on("connection", function(socket) {
 
   });
 
-
+  // エラーを返す
   socket.on("getErr", function(data) {
     query = 'insert into err(date, name, message ) values("' + data.date + '", "' + data.name + '", "' + data.massage + '");';
     dbConnection.query(query, function(err, rows, fields) {
       if (err) throw err;
     });
   });
+
+  socket.on("getTable", function(data) {
+    console.log(data);
+  })
+
+  socket.on("log", function(data) {
+    var str = "";
+    var i;
+    for(i in data) {
+      str += i + "-" + data[i] + "  ";
+    }
+    query = 'insert into log(log) values("' + str + '")';
+    dbConnection.query(query, function(err, rows, fields) {
+      if (err) throw err;
+    });
+  })
+
 
 
 });
