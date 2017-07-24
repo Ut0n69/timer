@@ -187,12 +187,21 @@ var StopWatch = function(_continerId) {
             self.stop();
             self.reset();
             self.status();
-            $("#" + _continerId).css({
-              'background-color': '',
-              'color': '#fff'
-            });
-            $("#" + _continerId + " .timerText").hide();
-            $("#" + _continerId + " .startBtn").show();
+
+            $("#" + _continerId + " .timerText").text("...");
+
+            var sleep = setInterval(function() {
+              $("#" + _continerId + " .timerText").hide();
+              $("#" + _continerId + " .startBtn").show();
+              $("#" + _continerId).css({
+                'background-color': '',
+                'color': '#fff'
+              });
+              clearInterval(sleep);
+
+            }, 3000);
+
+
 
           });
 
@@ -249,6 +258,8 @@ StopWatch.prototype.run = function() {
   var self = this;
   var timer = this.timerId;
   this.checkStatus = false;
+  clearInterval(timer);
+
   timer = setInterval(function() {
     var num = $(self.continerSelecter + ">" + self.timerTextSelecter).text();
 
@@ -256,35 +267,40 @@ StopWatch.prototype.run = function() {
       clearInterval(timer);
     }
 
-    // 時間切れ
-    if (~~num <= 1) {
-      $(self.continerSelecter).css({
-        'background-color': over,
-        'color': '#000'
-      });
-
-      if (self.continerSelecter.substr(1) == "Prometheus") {
-        $(self.continerSelecter + ">" + self.timerTextSelecter).text("");
-      } else if (self.continerSelecter.substr(1) == "Nectar") {
-        $(self.continerSelecter + ">" + self.timerTextSelecter).text("");
-      } else {
-        $(self.continerSelecter + ">" + self.timerTextSelecter).text(self.continerSelecter.substr(3));
-      }
-
-      clearInterval(timer);
-    } else if (~~num <= 16 && ~~num >= 1) {
-      $(self.continerSelecter).css({
-        'background-color': warnning,
-        'color': '#000'
-      });
-      $(self.continerSelecter + ">" + self.timerTextSelecter).text(~~num - 1);
-      // console.log(self.continerSelecter);
+    if (num == "...") {
+      console.log("waitFor3Seconds");
     } else {
-      $(self.continerSelecter + ">" + self.timerTextSelecter).text(~~num - 1);
+      // 時間切れ
+      if (~~num <= 1) {
+        $(self.continerSelecter).css({
+          'background-color': over,
+          'color': '#000'
+        });
+
+        if (self.continerSelecter.substr(1) == "Prometheus") {
+          $(self.continerSelecter + ">" + self.timerTextSelecter).text("");
+        } else if (self.continerSelecter.substr(1) == "Nectar") {
+          $(self.continerSelecter + ">" + self.timerTextSelecter).text("");
+        } else {
+          $(self.continerSelecter + ">" + self.timerTextSelecter).text(self.continerSelecter.substr(3));
+        }
+
+        clearInterval(timer);
+      } else if (~~num <= 16 && ~~num >= 1) {
+        $(self.continerSelecter).css({
+          'background-color': warnning,
+          'color': '#000'
+        });
+        $(self.continerSelecter + ">" + self.timerTextSelecter).text(~~num - 1);
+        // console.log(self.continerSelecter);
+      } else {
+        $(self.continerSelecter + ">" + self.timerTextSelecter).text(~~num - 1);
+      }
     }
 
   }, this.defaultInterval);
 };
+
 
 
 $(function() {
@@ -316,6 +332,7 @@ $(function() {
   $(window).on('touchmove.noScroll', function(e) {
     e.preventDefault();
   });
+
 
 
 
