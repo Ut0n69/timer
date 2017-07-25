@@ -20,12 +20,9 @@
     socket.emit("getLog");
 
     socket.on("toLog", function(data) {
-      console.log(data);
       for (i in data) {
         $table.append(
-          '<tr>' +
-          '  <th style="font-weight: normal;">' + data[i].log + '</th>' +
-          '</tr>'
+          '<div style="font-weight: normal;">' + data[i].log + '</div>'
         );
       }
     });
