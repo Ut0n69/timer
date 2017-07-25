@@ -62,8 +62,15 @@ io.sockets.on("connection", function(socket) {
       if (err) throw err;
       socket.emit("toHist", rows);
     });
+  });
+  socket.on("getLog", function() {
+    dbConnection.query('SELECT * FROM log', function(err, rows, fields) {
+      if (err) throw err;
+      socket.emit("toLog", rows);
+    });
 
   });
+
 
   // テーブルステータスを返す
   socket.on("getStatus", function() {
@@ -89,8 +96,14 @@ io.sockets.on("connection", function(socket) {
   socket.on("log", function(data) {
     var str = "";
     var i;
-    for(i in data) {
-      str += i + "-" + data[i] + "  ";
+    if (data.after == undefined) {
+      for(i in data) {
+        str = data.tableNum + "  " + data.status + "  (" + data.date + " - " + data.time + ")";
+      }
+    } else {
+      for(i in data) {
+        str = data.tableNum + "  " + data.status +  "  " + data.before + " -> " + data.after + "  (" + data.date + " - " + data.time + ")";
+      }
     }
     query = 'insert into log(log) values("' + str + '")';
     dbConnection.query(query, function(err, rows, fields) {
@@ -119,4 +132,8 @@ app.get('/timer/hist', function(req, res) {
 
 app.get('/timer/status', function(req, res) {
   res.sendFile(__dirname + '/www/timer-status.html');
+});
+
+app.get('/timer/log', function(req, res) {
+  res.sendFile(__dirname + '/www/log.html');
 });

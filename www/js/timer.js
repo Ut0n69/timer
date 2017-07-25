@@ -172,7 +172,7 @@ var StopWatch = function(_continerId) {
           hash.status = "end";
           hash.tableNum = tmpText;
           hash.date = moment().format('MM/DD');
-          hash.endTime = moment().format('HH:mm:ss');
+          hash.time = moment().format('HH:mm:ss');
           socket.emit("log", hash);
           // ログーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
