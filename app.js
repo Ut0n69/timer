@@ -127,8 +127,8 @@ io.sockets.on("connection", function(socket) {
 /*------------------
     リダイレクト
 ------------------*/
-app.get('/hoge', function(req, res) {
-  res.sendFile(__dirname + '/www/hoge.html');
+app.get('/info', function(req, res) {
+  res.sendFile(__dirname + '/www/info.html');
 });
 
 app.get('/api', function(req, res) {
