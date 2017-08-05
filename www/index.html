@@ -1,6 +1,63 @@
-<H1>Hi there!</H1>
+<!DOCTYPE html>
+<html lang="ja">
 
-<a href="./timer">はかる君</a><br /><br />
-<a href="./timer/log">操作ログ</a><br /><br />
-<a href="./timer/hist">ログ</a><br /><br />
-<a href="./manager">勤怠管理君</a><br />
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<title>はかる君</title>
+
+	<link rel="apple-touch-icon-precomposed" href="./images/timer.png" />
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="lib/toast.css">
+	<link rel="stylesheet" href="lib/icon.css">
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="./lib/jquery/jquery-1.11.1.min.js"></script>
+	<script src="./lib/jquerymobile.min.js"></script>
+	<script src="./lib/moment.min.js"></script>
+	<script src="./lib/toast.js"></script>
+</head>
+
+<body>
+	<header>
+		<!-- menu -->
+		<div class="header-menu">
+			≡
+		</div>
+
+		<!-- selectBtn -->
+		<div class="header-selectBtn">
+			<div class="sw">
+				<input id="sw" type="checkbox">
+				<label for="sw"></label>
+			</div>
+		</div>
+
+	</header>
+
+	<!-- bg-tableList -->
+	<img class="tableList" src="./images/tableList.png" />
+
+	<!-- tableDOM -->
+	<div class="table"></div>
+
+	<!-- discription -->
+	<div class="discription">
+		<div id="seat6"></div>
+		<p id="text6">: 空席</p>
+		<div id="seatUse"></div>
+		<p id="textUse">: 使用中</p>
+		<div id="seatWarning"></div>
+		<p id="textWarning">: 15分前</p>
+		<div id="seatOver"></div>
+		<p id="textOver">: 時間切れ</p>
+		<div id="seatReserved"></div>
+		<p id="textRes">: 予約席</p>
+	</div>
+
+	<script src="./js/main.js"></script>
+</body>
+
+</html>

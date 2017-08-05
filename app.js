@@ -1,13 +1,19 @@
-'use strict';
+var SQL = {
+  "pass": "",
+  "databaseName": "timerDB",
+  "usr": "root"
+};
 
-var SQL_PASS = "";
-var LISTEN_PORT = 3000;
 var WEBHOOK_URL = "";
+
+var LISTEN_PORT = 3000;
 
 var express = require('express');
 var mysql = require('mysql');
 var socketIO = require("socket.io");
 var query;
+var tableNum = [];
+var timerArr = [];
 
 var app = express();
 
@@ -22,15 +28,14 @@ var server = app.listen(LISTEN_PORT, function() {
   console.log('It works!');
 });
 
-
 /*------------------
     MySQL
 ------------------*/
 var dbConfig = {
   host: '127.0.0.1',
-  user: 'root',
-  password: SQL_PASS,
-  database: 'timerDB',
+  user: SQL.usr,
+  password: SQL.pass,
+  database: SQL.databaseName,
   port: 3306
 };
 
@@ -47,38 +52,62 @@ io.sockets.on("connection", function(socket) {
 
   socket.emit("webhook", WEBHOOK_URL);
 
-  socket.on("getData", function(data) {
+  socket.on("before", function() {
+    dbConnection.query('SELECT * FROM status', function(err, rows, fields) {
+      if (err) throw err;
+      socket.emit("catchStatus", rows);
+    });
+  })
 
-    query = 'insert into hist(date, tableNum, stayTime, endTime ) values("' + data.date + '", "' + data.tableNum + '", "' + data.stayTime + '", "' + data.endTime + '");';
+  socket.on("event", function(data) {
+    var status = tableNum[data]._status;
+    var num = tableNum[data]._num;
+
+    // 空席 or 予約
+    if (status == "empty" || status == "reserve") {
+      tableNum[data].start(num);
+      // socket.emit("getStatus", status);
+
+      // 使用中
+    } else if (status == "use" || status == "warn" || status == "over") {
+      // tableNum[data].end(num);
+
+    } else {
+      console.log("err");
+    }
+
+  });
+
+  socket.on("event-end", function(data) {
+    var status = tableNum[data]._status;
+    var num = tableNum[data]._num;
+
+    tableNum[data].end(num);
+  });
+
+  socket.on("event-edit", function(data) {
+    tableNum[data.num].edit(data.num, data.time);
+  });
+
+  socket.on("event-reserve", function(data) {
+    tableNum[data].reserve(data);
+  });
+
+  socket.on("event-reset", function() {
+
+    for (var i = 1; i <= 86; i++) {
+      if (tableNum[i].status == "use" || tableNum[i].status == "warn" || tableNum[i].status == "over") {
+        tableNum[i].status = "empty";
+        tableNum[i].time = DEFAULT_TIME;
+
+        clearInterval(timerArr[i]);
+      }
+    }
+
+    query = 'update status set status = "empty", time = ' + DEFAULT_TIME;
     dbConnection.query(query, function(err, rows, fields) {
       if (err) throw err;
     });
-
-  });
-
-  // ログを返す
-  socket.on("getHist", function() {
-    dbConnection.query('SELECT * FROM hist', function(err, rows, fields) {
-      if (err) throw err;
-      socket.emit("toHist", rows);
-    });
-  });
-  socket.on("getLog", function() {
-    dbConnection.query('SELECT * FROM log', function(err, rows, fields) {
-      if (err) throw err;
-      socket.emit("toLog", rows);
-    });
-
-  });
-
-
-  // テーブルステータスを返す
-  socket.on("getStatus", function() {
-    dbConnection.query('SELECT * FROM status', function(err, rows, fields) {
-      if (err) throw err;
-      socket.emit("toStatus", rows);
-    });
-
   });
 
   // エラーを返す
@@ -89,51 +118,180 @@ io.sockets.on("connection", function(socket) {
     });
   });
 
-  socket.on("getTable", function(data) {
-    console.log(data);
-  })
-
-  socket.on("log", function(data) {
-    var str = "";
-    var i;
-    if (data.after == undefined) {
-      for(i in data) {
-        str = data.tableNum + "  " + data.status + "  (" + data.date + " - " + data.time + ")";
-      }
-    } else {
-      for(i in data) {
-        str = data.tableNum + "  " + data.status +  "  " + data.before + " -> " + data.after + "  (" + data.date + " - " + data.time + ")";
-      }
-    }
-    query = 'insert into log(log) values("' + str + '")';
-    dbConnection.query(query, function(err, rows, fields) {
-      if (err) throw err;
-    });
-  })
-
-
 
 });
 
 /*------------------
     リダイレクト
 ------------------*/
-app.get('/timer', function(req, res) {
-  res.sendFile(__dirname + '/www/timer.html');
+app.get('/hoge', function(req, res) {
+  res.sendFile(__dirname + '/www/hoge.html');
 });
 
-app.get('/manager', function(req, res) {
-  res.sendFile(__dirname + '/www/manager.html');
+app.get('/api', function(req, res) {
+  dbConnection.query('SELECT * FROM status', function(err, rows, fields) {
+    if (err) throw err;
+    res.send(rows);
+  });
 });
 
-app.get('/timer/hist', function(req, res) {
-  res.sendFile(__dirname + '/www/timer-hist.html');
-});
 
-app.get('/timer/status', function(req, res) {
-  res.sendFile(__dirname + '/www/timer-status.html');
-});
+/*------------------
+    タイマー
+------------------*/
+const DEFAULT_INTERVAL = 1000;
+const DEFAULT_TIME = 22;
 
-app.get('/timer/log', function(req, res) {
-  res.sendFile(__dirname + '/www/log.html');
+class Timer {
+  constructor(num, time, status) {
+    this.num = num;
+    this.time = time;
+    this.status = status;
+  }
+  get num() {
+    return this._num;
+  }
+  set num(val) {
+    this._num = val;
+  }
+  get time() {
+    return this._time;
+  }
+  set time(val) {
+    this._time = val;
+  }
+  get status() {
+    return this._status;
+  }
+  set status(val) {
+    this._status = val;
+  }
+  start(num) {
+    var num = this.num;
+    var timer = this.num;
+    tableNum[num].status = "use";
+
+    query = 'update status set status = "use" where num = ' + num;
+    dbConnection.query(query, function(err, rows, fields) {
+      if (err) throw err;
+    });
+
+    timerArr[timer] = setInterval(function() {
+      var tmpTime = countDown(num);
+      if (tmpTime <= 0) {
+        over(num);
+        clearInterval(timerArr[num]);
+      } else if (tmpTime <= 16) {
+        warn(num);
+      } else {
+
+      }
+    }, DEFAULT_INTERVAL);
+  }
+  end(num) {
+    var num = this.num;
+    tableNum[num].status = "empty";
+    tableNum[num].time = DEFAULT_TIME;
+
+    clearInterval(timerArr[num]);
+
+    query = 'update status set time = ' + DEFAULT_TIME + ', status = "empty" where num = ' + num;
+    dbConnection.query(query, function(err, rows, fields) {
+      if (err) throw err;
+    });
+
+  }
+  edit(num, time) {
+    if (tableNum[num].status == "over") {
+      tableNum[num].start(num);
+      if (time <= 15) {
+        tableNum[num].status = "warn";
+        tableNum[num].time = time;
+        query = 'update status set time = ' + time + ', status = "warn" where num = ' + num;
+        dbConnection.query(query, function(err, rows, fields) {
+          if (err) throw err;
+        });
+      } else {
+        tableNum[num].status = "use";
+        tableNum[num].time = time;
+        query = 'update status set time = ' + time + ', status = "use" where num = ' + num;
+        dbConnection.query(query, function(err, rows, fields) {
+          if (err) throw err;
+        });
+      }
+    } else {
+      if (time <= 15) {
+        tableNum[num].status = "warn";
+        tableNum[num].time = time;
+        query = 'update status set time = ' + time + ', status = "warn" where num = ' + num;
+        dbConnection.query(query, function(err, rows, fields) {
+          if (err) throw err;
+        });
+      } else {
+        tableNum[num].status = "use";
+        tableNum[num].time = time;
+        query = 'update status set time = ' + time + ', status = "use" where num = ' + num;
+        dbConnection.query(query, function(err, rows, fields) {
+          if (err) throw err;
+        });
+      }
+    }
+  }
+  reserve(num) {
+    if (tableNum[num].status == "empty") {
+      tableNum[num].status = "reserve";
+      query = 'update status set status = "reserve" where num = ' + num;
+      dbConnection.query(query, function(err, rows, fields) {
+        if (err) throw err;
+      });
+    } else if (tableNum[num].status == "reserve") {
+      tableNum[num].status = "empty";
+      query = 'update status set status = "empty" where num = ' + num;
+      dbConnection.query(query, function(err, rows, fields) {
+        if (err) throw err;
+      });
+    }
+  }
+  info() {
+    console.log("tableNum: " + this.num + "  time: " + this.time + "  status: " + this.status);
+  }
+}
+
+function countDown(val) {
+  tableNum[val].time = tableNum[val]._time - 1;
+
+  query = 'update status set time = ' + tableNum[val].time + ', status = "' + tableNum[val].status + '" where num = ' + tableNum[val].num;
+  dbConnection.query(query, function(err, rows, fields) {
+    if (err) throw err;
+  });
+
+  return tableNum[val].time;
+}
+
+function over(val) {
+  tableNum[val].status = "over";
+  query = 'update status set status = "' + tableNum[val].status + '" where num = ' + tableNum[val].num;
+  dbConnection.query(query, function(err, rows, fields) {
+    if (err) throw err;
+  });
+}
+
+function warn(val) {
+  tableNum[val].status = "warn";
+}
+
+function reset() {
+  for (var i = 1; i <= 86; i++) {
+    clearInterval(timerArr[i]);
+  }
+}
+
+// dbから情報を取得してインスタンス生成
+dbConnection.query('SELECT * FROM status', function(err, rows, fields) {
+  if (err) throw err;
+
+  for (var i = 1; i <= 86; i++) {
+    tableNum[i] = new Timer(i, rows[i - 1].time, rows[i - 1].status);
+  }
+
 });
