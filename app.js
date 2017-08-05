@@ -8,6 +8,9 @@ var WEBHOOK_URL = "";
 
 var LISTEN_PORT = 3000;
 
+const DEFAULT_INTERVAL = 60000;
+const DEFAULT_TIME = 120;
+
 var express = require('express');
 var mysql = require('mysql');
 var socketIO = require("socket.io");
@@ -139,9 +142,6 @@ app.get('/api', function(req, res) {
 /*------------------
     タイマー
 ------------------*/
-const DEFAULT_INTERVAL = 1000;
-const DEFAULT_TIME = 22;
-
 class Timer {
   constructor(num, time, status) {
     this.num = num;
