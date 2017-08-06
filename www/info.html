@@ -3,10 +3,11 @@
 
 <head>
 	<meta charset="utf-8" />
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"> -->
 	<meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-	<title>はかる君</title>
+
+	<title>座席状況</title>
 
 	<link rel="apple-touch-icon-precomposed" href="./images/timer.png" />
 	<link rel="stylesheet" href="css/style.css">
@@ -25,20 +26,7 @@
   <div style="width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0); z-index:999; position: absolute; top: 0px; left: 0px;"></div>
 
 	<header>
-		<!-- menu -->
-		<div class="header-menu">
-			≡
-		</div>
-
-		<!-- selectBtn -->
-		<div class="header-selectBtn">
-			<div class="sw">
-				<input id="sw" type="checkbox">
-				<label for="sw"></label>
-			</div>
-		</div>
-
-	</header>
+    <div style="color: rgb(255, 255, 255);user-select: none;font-size: 25px;padding: 5px 0px 0px 20px;">現在の座席使用状況</div>	</header>
 
 	<!-- bg-tableList -->
 	<img class="tableList" src="./images/tableList.png" />
@@ -60,13 +48,7 @@
 		<p id="textRes">: 予約席</p>
 	</div>
 
-	<script src="./js/main.js"></script>
-  <script>
-    var setTime = setInterval(function() {
-      $(window).off('.noScroll');
-      clearInterval(setTime);
-    }, 1000);
-  </script>
+	<script src="./js/info.js"></script>
 </body>
 
 </html>
