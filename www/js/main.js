@@ -60,6 +60,7 @@ var hbgMenu = function() {
     ' <div class="hbgMenu-reset">リセット</div>' +
     ' <div class="hbgMenu-des">操作説明</div>' +
     ' <div class="hbgMenu-err">エラー報告</div>' +
+    ' <div class="hbgMenu-log">操作ログ</div>' +
     '</div>'
   );
 
@@ -174,6 +175,100 @@ var hbgMenu = function() {
 
     $(".back").on("tap", function() {
       $(".howToUse").remove();
+      return false;
+    });
+  });
+
+  $(".hbgMenu-log").on("tap", function() {
+
+    // スクロール無効解除
+    $(window).off('.noScroll');
+
+    var log;
+
+    $(".modal-bg").remove();
+    $(".hbgMenu").remove();
+
+    $('body').prepend(
+      '<div class="howToUse">' +
+      '<p class="back">×</p>' +
+      '<div class="log" style="overflow: scroll; background-color: #fff; widh: 100%; height: 80%; margin: 30px;">' +
+      '</div>' +
+      '</div>'
+    );
+
+    socket.emit("getLog");
+    socket.on("catchLog", function(data) {
+        log = data;
+        for (i in log) {
+          $('.log').prepend('<p>' + log[i].log + '</p>');
+        }
+
+    });
+
+
+
+    $(".err-form-btn").on("tap", function() {
+      var errData = {};
+      errData.date = moment().format('YYYYMMDD HH:mm');
+      errData.name = $(".err-form-name").val();
+      errData.massage = $(".err-form-massage").val();
+
+      socket.emit("getErr", errData);
+
+      var text = "日付: " + errData.date + "\n名前: " + errData.name + "\nメッセージ： " + errData.massage;
+      $.ajax({
+        data: 'payload=' + JSON.stringify({
+          "text": text
+        }),
+        dataType: 'json',
+        processData: false,
+        type: 'POST',
+        url: URL
+      });
+
+
+      $(".err-form").remove();
+
+      if (errData.name == "") {
+        $(".howToUse").append(
+          '<div class="err-form">' +
+          '<img class="useImg" src="./images/dogeza.png" />' +
+          '<h3 class="send-form-text">不具合の報告ありがとうございます！</h3>' +
+          '<p>もし，これによりご迷惑をおかけしていましたら，大変申し訳御座いませんでした...</p>' +
+          '<p>この不具合はすぐに修正いたします．お手数おかけしました...</p>' +
+          '<button class="send-form-back">戻る</button>' +
+          '</div>'
+        );
+      } else {
+        $(".howToUse").append(
+          '<div class="err-form">' +
+          '<p class="send-form-name">' + errData.name + ' さん</p>' +
+          '<img class="useImg" src="./images/dogeza.png" />' +
+          '<h3 class="send-form-text">不具合の報告ありがとうございます！</h3>' +
+          '<p>もし，これによりご迷惑をおかけしていましたら，大変申し訳御座いませんでした...</p>' +
+          '<p>この不具合はすぐに修正いたします．お手数おかけしました...</p>' +
+          '<button class="send-form-back">戻る</button>' +
+          '</div>'
+        );
+      }
+
+      $(".send-form-back").on("tap", function() {
+        $(".howToUse").remove();
+        return false;
+      });
+
+      return false;
+    });
+
+    $(".back").on("tap", function() {
+      $(".howToUse").remove();
+
+      // スクロール無効
+      $(window).on('touchmove.noScroll', function(e) {
+        e.preventDefault();
+      });
+
       return false;
     });
   });

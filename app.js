@@ -71,6 +71,33 @@ io.sockets.on("connection", function(socket) {
       tableNum[data].start(num);
       // socket.emit("getStatus", status);
 
+
+      // 操作ログ---------------------
+      var logDate = new Date();
+
+      var month = logDate.getMonth() + 1;
+      var date = logDate.getDate();
+      var hour = logDate.getHours();
+      var min = logDate.getMinutes();
+      var sec = logDate.getSeconds();
+
+      var str = "開始 - " + "番号: " + num + ", 操作時刻: " + month + "/" + date + " " + hour + ":" + min + ":" + sec;
+      query = 'insert into log(log) values("' + str + '")';
+      dbConnection.query(query, function(err, rows, fields) {
+        if (err) throw err;
+        var logDate = new Date();
+
+        var month = logDate.getMonth() + 1;
+        var date = logDate.getDate();
+        var hour = logDate.getHours();
+        var min = logDate.getMinutes();
+        var sec = logDate.getSeconds();
+
+      });
+
+      // ---------------------操作ログ
+
+
       // 使用中
     } else if (status == "use" || status == "warn" || status == "over") {
       // tableNum[data].end(num);
@@ -85,11 +112,64 @@ io.sockets.on("connection", function(socket) {
     var status = tableNum[data]._status;
     var num = tableNum[data]._num;
 
+    // 操作ログ---------------------
+    var logDate = new Date();
+
+    var month = logDate.getMonth() + 1;
+    var date = logDate.getDate();
+    var hour = logDate.getHours();
+    var min = logDate.getMinutes();
+    var sec = logDate.getSeconds();
+
+    var str = "終了 - " + "番号: " + num + ", 残り時間: " + tableNum[data]._time + ", 操作時刻: " + month + "/" + date + " " + hour + ":" + min + ":" + sec;
+    query = 'insert into log(log) values("' + str + '")';
+    dbConnection.query(query, function(err, rows, fields) {
+      if (err) throw err;
+      var logDate = new Date();
+
+      var month = logDate.getMonth() + 1;
+      var date = logDate.getDate();
+      var hour = logDate.getHours();
+      var min = logDate.getMinutes();
+      var sec = logDate.getSeconds();
+
+    });
+
+    // ---------------------操作ログ
+
     tableNum[data].end(num);
   });
 
   socket.on("event-edit", function(data) {
+
+    // 操作ログ---------------------
+    var logDate = new Date();
+
+    var month = logDate.getMonth() + 1;
+    var date = logDate.getDate();
+    var hour = logDate.getHours();
+    var min = logDate.getMinutes();
+    var sec = logDate.getSeconds();
+
+    var str = "編集 - " + "番号: " + data.num + ", 編集前: " + tableNum[data.num]._time + ", 編集後: " + data.time + ", 操作時刻: " + month + "/" + date + " " + hour + ":" + min + ":" + sec;
+    query = 'insert into log(log) values("' + str + '")';
+    dbConnection.query(query, function(err, rows, fields) {
+      if (err) throw err;
+      var logDate = new Date();
+
+      var month = logDate.getMonth() + 1;
+      var date = logDate.getDate();
+      var hour = logDate.getHours();
+      var min = logDate.getMinutes();
+      var sec = logDate.getSeconds();
+
+    });
+
+    // ---------------------操作ログ
+
+
     tableNum[data.num].edit(data.num, data.time);
+
   });
 
   socket.on("event-reserve", function(data) {
@@ -120,6 +200,16 @@ io.sockets.on("connection", function(socket) {
       if (err) throw err;
     });
   });
+
+  // 操作ログを返す
+  socket.on("getLog", function(data) {
+    dbConnection.query('SELECT * FROM log', function(err, rows, fields) {
+      if (err) throw err;
+      socket.emit("catchLog", rows);
+    });
+
+  });
+
 
 
 });

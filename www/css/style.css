@@ -926,7 +926,7 @@ select {
 
 .hbgMenu {
   width: 100%;
-  height: 320px;
+  height: 370px;
   background: #fff;
   position: fixed;
   display: none;
@@ -940,27 +940,12 @@ select {
   font-size: 40px;
 }
 
-.hbgMenu-reset {
+.hbgMenu-reset, .hbgMenu-des, .hbgMenu-err, .hbgMenu-log {
   text-align: center;
   font-size: 30px;
   font-style: italic;
   text-decoration: underline;
   margin-bottom: 30px;
-}
-
-.hbgMenu-des {
-  text-align: center;
-  font-size: 30px;
-  font-style: italic;
-  text-decoration: underline;
-  margin-bottom: 30px;
-}
-
-.hbgMenu-err {
-  text-align: center;
-  font-size: 30px;
-  font-style: italic;
-  text-decoration: underline;
 }
 
 .howToUse {
