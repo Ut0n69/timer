@@ -70,7 +70,9 @@ header {
   margin-top: 10px;
 }
 
-[class^="no"], .prometheus, .nectar {
+[class^="no"],
+.prometheus,
+.nectar {
   position: absolute;
   font-weight: bold;
   text-decoration: none;
@@ -862,13 +864,16 @@ header {
 }
 
 .modal-contents-selectar {
+  margin: 0 0 30px 0;
   display: flex;
   text-align: center;
+  height: 50px;
 }
 
 .modal-contents-end {
   width: 200px;
   height: 130px;
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.4);
   border-radius: 15px;
   font-size: 40px;
   background-color: #f90;
@@ -881,6 +886,7 @@ header {
 .modal-contents-edit {
   width: 200px;
   height: 130px;
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.4);
   border-radius: 15px;
   font-size: 40px;
   background-color: #bfbfbf;
@@ -902,14 +908,48 @@ header {
   background-color: #fff;
 }
 
-.modal-edit-range {
-  width: 100%;
-  height: 30px;
+.modal-contents-val {
+  width: 400px;
+  height: 50px;
+  margin: 0 auto;
+  position: relative;
+  top: 30px;
 }
 
-select {
-  font-size: 20px;
-  margin: 30px;
+.input-val {
+  position: fixed;
+  font-size: 27px;
+  top: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.input-range[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #c7c7c7;
+  height: 2px;
+  width: 100%;
+  margin: 80px 50px;
+}
+
+.input-range[type="range"]:focus,
+.input-range[type="range"]:active {
+  outline: none;
+}
+
+.input-range[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  width: 30px;
+  height: 30px;
+  display: block;
+  background-color: rgb(63, 81, 181);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
 }
 
 .modal-edit-conf {
@@ -918,10 +958,13 @@ select {
   color: #fff;
   width: 400px;
   height: 45px;
-  margin-left: 50px;
   padding-top: 11px;
   font-size: 25px;
   border-radius: 60px;
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .hbgMenu {
@@ -940,12 +983,59 @@ select {
   font-size: 40px;
 }
 
-.hbgMenu-reset, .hbgMenu-des, .hbgMenu-err, .hbgMenu-log {
-  text-align: center;
+.hbgMenu-reset {
+  position: fixed;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+  top: 53px;
+  left: 100px;
+  width: 265px;
+  height: 265px;
   font-size: 30px;
-  font-style: italic;
-  text-decoration: underline;
-  margin-bottom: 30px;
+  border: 3px solid #000;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.hbgMenu-des {
+  position: fixed;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+  display: inline-flex;
+  top: 52px;
+  right: 100px;
+  width: 250px;
+  height: 80px;
+  font-size: 30px;
+  border: 3px solid #000;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.hbgMenu-err {
+  position: fixed;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+  display: inline-flex;
+  top: 144px;
+  right: 100px;
+  width: 250px;
+  height: 80px;
+  font-size: 30px;
+  border: 3px solid #000;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.hbgMenu-log {
+  position: fixed;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+  display: inline-flex;
+  top: 236px;
+  right: 100px;
+  width: 250px;
+  height: 80px;
+  font-size: 30px;
+  border: 3px solid #000;
+  text-align: center;
+  border-radius: 15px;
 }
 
 .howToUse {
@@ -977,7 +1067,6 @@ select {
   border: 0;
   padding: 10px;
   font-size: 1.3em;
-  font-family: Arial, sans-serif;
   color: #000;
   border: solid 1px rgb(63, 81, 181);
   margin: 0 0 20px;
@@ -988,12 +1077,12 @@ select {
   border: 0;
   padding: 10px;
   font-size: 1.3em;
-  font-family: Arial, sans-serif;
   color: #000;
   border: solid 1px rgb(63, 81, 181);
 }
 
-.err-form-btn, .send-form-back {
+.err-form-btn,
+.send-form-back {
   background-color: rgb(63, 81, 181);
   width: 100%;
   height: 50px;
@@ -1016,6 +1105,34 @@ select {
 
 .discription {
   background-color: #eee;
+}
+
+.table-header {
+  background: rgb(63, 81, 181);
+  color: #fff;
+  z-index: 2;
+  position: fixed;
+}
+
+.table-header td {
+  text-align: center;
+}
+
+.table-log {
+  border-collapse: collapse;
+  border-spacing: 0;
+  position: relative;
+  top: 32px;
+  width: 100%;
+}
+
+.table-log td {
+  border-bottom: 1px solid #000;
+  text-align: center;
+}
+
+.table-log tr:nth-child(even) {
+  background: #eee;
 }
 
 [id^="seat"] {
