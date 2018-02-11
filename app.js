@@ -1,10 +1,10 @@
 var SQL = {
-  "pass": "",
+  "pass": "ht14a031",
   "databaseName": "timerDB",
   "usr": "root"
 };
 
-var WEBHOOK_URL = "";
+var WEBHOOK_URL = "https://hooks.slack.com/services/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";
 
 var LISTEN_PORT = 3000;
 
@@ -90,10 +90,12 @@ io.sockets.on("connection", function (socket) {
       dbConnection.query(query, function (err, rows, fields) {
         if (err) throw err;
       });
+      // ---------------------操作ログ
 
       // 使用中
     } else if (status == "use" || status == "warn" || status == "over") {
       // tableNum[data].end(num);
+
     } else {
       console.log("err");
     }
@@ -104,6 +106,7 @@ io.sockets.on("connection", function (socket) {
     var status = tableNum[data]._status;
     var num = tableNum[data]._num;
 
+    // 操作ログ---------------------
     var logDate = new Date();
 
     var month = logDate.getMonth() + 1;
@@ -124,11 +127,14 @@ io.sockets.on("connection", function (socket) {
       if (err) throw err;
     });
 
+    // ---------------------操作ログ
+
     tableNum[data].end(num);
   });
 
   socket.on("event-edit", function (data) {
 
+    // 操作ログ---------------------
     var logDate = new Date();
 
     var month = logDate.getMonth() + 1;
@@ -148,6 +154,8 @@ io.sockets.on("connection", function (socket) {
     dbConnection.query(query, function (err, rows, fields) {
       if (err) throw err;
     });
+    // ---------------------操作ログ
+
 
     tableNum[data.num].edit(data.num, data.time);
 
@@ -190,6 +198,9 @@ io.sockets.on("connection", function (socket) {
     });
 
   });
+
+
+
 });
 
 /*------------------
