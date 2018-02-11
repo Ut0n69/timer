@@ -69,10 +69,7 @@ io.sockets.on("connection", function(socket) {
     // 空席 or 予約
     if (status == "empty" || status == "reserve") {
       tableNum[data].start(num);
-      // socket.emit("getStatus", status);
 
-
-      // 操作ログ---------------------
       var logDate = new Date();
 
       var month = logDate.getMonth() + 1;
@@ -87,12 +84,10 @@ io.sockets.on("connection", function(socket) {
       if (min < 10) min = "0" + min;
       if (sec < 10) sec = "0" + sec;
 
-
       query = 'insert into log(num, operation, time) values(' + num + ', "開始", "' + month + "/" + date + "/" + " " + hour +":" + min + ":" + sec + '" );';
       dbConnection.query(query, function(err, rows, fields) {
         if (err) throw err;
       });
-      // ---------------------操作ログ
 
       // 使用中
     } else if (status == "use" || status == "warn" || status == "over") {
@@ -108,7 +103,6 @@ io.sockets.on("connection", function(socket) {
     var status = tableNum[data]._status;
     var num = tableNum[data]._num;
 
-    // 操作ログ---------------------
     var logDate = new Date();
 
     var month = logDate.getMonth() + 1;
@@ -123,20 +117,16 @@ io.sockets.on("connection", function(socket) {
     if (min < 10) min = "0" + min;
     if (sec < 10) sec = "0" + sec;
 
-    var str = "終了 - " + "番号: " + num + ", 残り時間: " + tableNum[data]._time + ", 操作時刻: " + month + "/" + date + " " + hour + ":" + min + ":" + sec;
     query = 'insert into log(num, operation, time, leftTime) values(' + num + ', "終了", "' + month + "/" + date + "/" + " " + hour +":" + min + ":" + sec + '" , ' + tableNum[data]._time + ' );';
     dbConnection.query(query, function(err, rows, fields) {
       if (err) throw err;
     });
-
-    // ---------------------操作ログ
 
     tableNum[data].end(num);
   });
 
   socket.on("event-edit", function(data) {
 
-    // 操作ログ---------------------
     var logDate = new Date();
 
     var month = logDate.getMonth() + 1;
@@ -151,16 +141,12 @@ io.sockets.on("connection", function(socket) {
     if (min < 10) min = "0" + min;
     if (sec < 10) sec = "0" + sec;
 
-    var str = "編集 - " + "番号: " + data.num + ", 編集前: " + tableNum[data.num]._time + ", 編集後: " + data.time + ", 操作時刻: " + month + "/" + date + " " + hour + ":" + min + ":" + sec;
     query = 'insert into log(num, operation, time, beforeEdit, afterEdit) values(' + data.num + ', "編集", "' + month + "/" + date + "/" + " " + hour +":" + min + ":" + sec + '" , ' + tableNum[data.num]._time + ', ' + data.time + ' );';
     dbConnection.query(query, function(err, rows, fields) {
       if (err) throw err;
     });
-    // ---------------------操作ログ
-
 
     tableNum[data.num].edit(data.num, data.time);
-
   });
 
   socket.on("event-reserve", function(data) {
@@ -200,8 +186,6 @@ io.sockets.on("connection", function(socket) {
     });
 
   });
-
-
 
 });
 

@@ -115,10 +115,7 @@ var hbgMenu = function () {
       return false;
     });
 
-
     $(".hbgMenu").remove();
-
-
 
     return false;
   });
@@ -181,7 +178,6 @@ var hbgMenu = function () {
         url: URL
       });
 
-
       $(".err-form").remove();
 
       if (errData.name == "") {
@@ -219,6 +215,8 @@ var hbgMenu = function () {
       $(".howToUse").remove();
       return false;
     });
+
+    return false;
   });
 
   $(".hbgMenu-log").on("tap", function () {
@@ -276,10 +274,6 @@ var hbgMenu = function () {
       }
     });
 
-
-
-
-
     $(".err-form-btn").on("tap", function () {
       var errData = {};
       errData.date = moment().format('YYYYMMDD HH:mm');
@@ -298,7 +292,6 @@ var hbgMenu = function () {
         type: 'POST',
         url: URL
       });
-
 
       $(".err-form").remove();
 
@@ -343,6 +336,8 @@ var hbgMenu = function () {
 
       return false;
     });
+
+    return false;
   });
 
 };
@@ -556,7 +551,6 @@ $(function () {
 
     return false;
   });
-
 
   // コピー，右クリック無効
   $('div').css('user-select', 'none').on('copy paste contextmenu', false);
