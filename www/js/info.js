@@ -4,7 +4,7 @@ var over = 'rgb(255, 68, 68)';
 var warn = 'rgba(255, 241, 15, 0.3)';
 var reserve = 'rgb(153, 204, 0)';
 
-var DEFAULT_INTERVAL = 3000;
+var DEFAULT_INTERVAL = 1000;
 
 var socket = io.connect(location.origin);
 
@@ -99,7 +99,7 @@ $(function() {
     }
   });
 
-  // 3秒毎に更新
+  // 1秒毎に更新
   setInterval(function() {
     socket.emit("before");
   }, DEFAULT_INTERVAL);

@@ -84,7 +84,7 @@ io.sockets.on("connection", function(socket) {
       if (min < 10) min = "0" + min;
       if (sec < 10) sec = "0" + sec;
 
-      query = 'insert into log(num, operation, time) values(' + num + ', "開始", "' + month + "/" + date + "/" + " " + hour +":" + min + ":" + sec + '" );';
+      query = 'insert into log(num, operation, time) values(' + num + ', "開始", "' + month + "/" + date + " " + hour +":" + min + ":" + sec + '" );';
       dbConnection.query(query, function(err, rows, fields) {
         if (err) throw err;
       });
@@ -117,7 +117,7 @@ io.sockets.on("connection", function(socket) {
     if (min < 10) min = "0" + min;
     if (sec < 10) sec = "0" + sec;
 
-    query = 'insert into log(num, operation, time, leftTime) values(' + num + ', "終了", "' + month + "/" + date + "/" + " " + hour +":" + min + ":" + sec + '" , ' + tableNum[data]._time + ' );';
+    query = 'insert into log(num, operation, time, leftTime) values(' + num + ', "終了", "' + month + "/" + date + " " + hour +":" + min + ":" + sec + '" , ' + tableNum[data]._time + ' );';
     dbConnection.query(query, function(err, rows, fields) {
       if (err) throw err;
     });
@@ -141,7 +141,7 @@ io.sockets.on("connection", function(socket) {
     if (min < 10) min = "0" + min;
     if (sec < 10) sec = "0" + sec;
 
-    query = 'insert into log(num, operation, time, beforeEdit, afterEdit) values(' + data.num + ', "編集", "' + month + "/" + date + "/" + " " + hour +":" + min + ":" + sec + '" , ' + tableNum[data.num]._time + ', ' + data.time + ' );';
+    query = 'insert into log(num, operation, time, beforeEdit, afterEdit) values(' + data.num + ', "編集", "' + month + "/" + date + " " + hour +":" + min + ":" + sec + '" , ' + tableNum[data.num]._time + ', ' + data.time + ' );';
     dbConnection.query(query, function(err, rows, fields) {
       if (err) throw err;
     });
