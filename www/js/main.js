@@ -255,6 +255,7 @@ var hbgMenu = function () {
 
     socket.emit("getLog");
     socket.on("catchLog", function (data) {
+      $(".table-log").empty();
       log = data;
       for (i in log) {
         if (log[i].leftTime == null) log[i].leftTime = " - ";
