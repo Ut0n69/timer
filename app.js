@@ -201,6 +201,12 @@ app.get('/api', function(req, res) {
     if (err) throw err;
     res.send(rows);
   });
+  
+app.get('/log', function(req, res) {
+  dbConnection.query('SELECT * FROM log', function(err, rows, fields) {
+    if (err) throw err;
+    res.send(rows);
+  });
 });
 
 
