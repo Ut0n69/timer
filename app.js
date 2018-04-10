@@ -196,12 +196,14 @@ app.get('/info', function(req, res) {
   res.sendFile(__dirname + '/www/info.html');
 });
 
+// ステータス
 app.get('/api', function(req, res) {
   dbConnection.query('SELECT * FROM status', function(err, rows, fields) {
     if (err) throw err;
     res.send(rows);
   });
   
+// ログ
 app.get('/log', function(req, res) {
   dbConnection.query('SELECT * FROM log', function(err, rows, fields) {
     if (err) throw err;
@@ -209,7 +211,7 @@ app.get('/log', function(req, res) {
   });
 });
 
-
+  
 /*------------------
     タイマー
 ------------------*/
